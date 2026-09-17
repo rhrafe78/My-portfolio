@@ -126,14 +126,12 @@ body {
   animation: auroraMove3 14s ease-in-out infinite alternate;
 }
 
-/* Mobile Lightweight GPU Optimization: static blur instead of heavy ongoing GPU animation */
+/* Mobile Lightweight GPU Optimization */
 @media (max-width: 768px) {
   .aurora-blob-1,
   .aurora-blob-2,
   .aurora-blob-3 {
-    animation: none !important;
-    filter: blur(45px) !important;
-    opacity: 0.45 !important;
+    display: none !important;
   }
 }
 
@@ -193,19 +191,64 @@ body {
 /* ==========================================================================
    Interactive Cards with DjangoBlog Spotlight & Glassmorphism
    ========================================================================== */
+#main-nav {
+  transition: padding 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              background-color 0.35s ease,
+              border-color 0.35s ease,
+              box-shadow 0.35s ease;
+}
+
+#main-nav .nav-avatar-box {
+  width: 2.5rem; /* 40px */
+  height: 2.5rem;
+  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.35s ease;
+}
+
+#main-nav .nav-title-text {
+  font-size: 1rem;
+  transition: font-size 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#main-nav .nav-subtitle-text {
+  max-height: 20px;
+  opacity: 1;
+  transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.25s ease;
+  overflow: hidden;
+}
+
 .glass-nav {
-  background: rgba(7, 11, 20, 0.78);
+  background: rgba(7, 11, 20, 0.82);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(102, 126, 234, 0.15);
 }
 
-.glass-nav-scrolled {
-  background: rgba(7, 11, 20, 0.94);
+/* Scrolled State: Smoothly compresses navbar height on scroll */
+#main-nav.glass-nav-scrolled {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+  background: rgba(7, 11, 20, 0.95) !important;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(102, 126, 234, 0.35);
   box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.85), 0 0 20px -5px rgba(102, 126, 234, 0.25);
+}
+
+#main-nav.glass-nav-scrolled .nav-avatar-box {
+  width: 2rem !important; /* 32px */
+  height: 2rem !important;
+}
+
+#main-nav.glass-nav-scrolled .nav-title-text {
+  font-size: 0.88rem !important;
+}
+
+#main-nav.glass-nav-scrolled .nav-subtitle-text {
+  max-height: 0 !important;
+  opacity: 0 !important;
 }
 
 .glass-card {
@@ -405,6 +448,155 @@ body {
   transition: color 0.25s ease;
 }
 
+/* ==========================================================================
+   Reference-Inspired Hero Image Ring & Floating Pulse Glow
+   ========================================================================== */
+.hero-image-wrap {
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.hero-image-ring {
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  padding: 4px;
+  background: linear-gradient(135deg, #06b6d4, #6366f1, #a855f7);
+  box-shadow: 0 0 35px rgba(99, 102, 241, 0.4), 0 0 70px rgba(6, 182, 212, 0.25), 0 0 0 1px rgba(99, 102, 241, 0.25);
+  animation: hero-float-pulse 6s ease-in-out infinite;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes hero-float-pulse {
+  0%, 100% {
+    transform: translateY(0);
+    box-shadow: 0 0 35px rgba(99, 102, 241, 0.4), 0 0 70px rgba(6, 182, 212, 0.25), 0 0 0 1px rgba(99, 102, 241, 0.25);
+  }
+  50% {
+    transform: translateY(-12px);
+    box-shadow: 0 0 55px rgba(99, 102, 241, 0.6), 0 0 95px rgba(6, 182, 212, 0.35), 0 0 0 1px rgba(99, 102, 241, 0.35);
+  }
+}
+
+.hero-image-ring:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 0 65px rgba(99, 102, 241, 0.65), 0 0 100px rgba(6, 182, 212, 0.45);
+}
+
+.hero-image-placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #080d1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-image-ring img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.hero-image-ring:hover img {
+  transform: scale(1.04);
+}
+
+.hero-bg-glow {
+  position: absolute;
+  width: 440px;
+  height: 440px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.25) 0%, rgba(6, 182, 212, 0.12) 40%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+@media (max-width: 900px) {
+  .hero-image-ring {
+    width: 270px;
+    height: 270px;
+  }
+  .hero-bg-glow {
+    width: 320px;
+    height: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-image-ring {
+    width: 240px;
+    height: 240px;
+  }
+  .hero-bg-glow {
+    width: 270px;
+    height: 270px;
+  }
+}
+
+/* ==========================================================================
+   Reference-Inspired Project Card Image Container Styling
+   ========================================================================== */
+.project-card {
+  background: rgba(13, 19, 33, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 18px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
+  position: relative;
+  width: 100%;
+}
+
+.project-card:hover {
+  border-color: rgba(99, 102, 241, 0.45);
+  box-shadow: 0 10px 30px -5px rgba(99, 102, 241, 0.25), 0 20px 45px rgba(0, 0, 0, 0.6);
+  transform: translateY(-6px);
+}
+
+.project-img-placeholder {
+  width: 100%;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  background: #080d1a;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 640px) {
+  .project-img-placeholder {
+    height: 185px;
+  }
+}
+
+.project-img-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover .project-img-placeholder img {
+  transform: scale(1.05);
+}
+
 .nav-link::after {
   content: '';
   position: absolute;
@@ -430,14 +622,28 @@ body {
   text-shadow: 0 0 12px rgba(102, 126, 234, 0.5);
 }
 
-/* Project Card Filter Transitions */
+/* ==========================================================================
+   Fresh & Clean Project Cards & Tech Language Pills
+   ========================================================================== */
 .project-card {
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1),
+              border-color 0.25s ease,
+              box-shadow 0.25s ease,
+              opacity 0.25s ease;
+  background: rgba(12, 17, 30, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(99, 102, 241, 0.45);
+  box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.65), 0 0 20px -4px rgba(99, 102, 241, 0.18);
 }
 
 .project-card.filter-hidden {
   opacity: 0;
-  transform: scale(0.94);
+  transform: scale(0.95);
   pointer-events: none;
   display: none !important;
 }
@@ -448,16 +654,80 @@ body {
   display: flex !important;
 }
 
+/* Fresh Clean Language / Stack Pill */
+.tech-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.18rem 0.48rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  font-family: var(--font-mono);
+  background: rgba(15, 23, 42, 0.75);
+  color: #cbd5e1;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.375rem;
+  transition: all 0.2s ease;
+}
+
+.tech-pill:hover {
+  background: rgba(30, 41, 59, 0.95);
+  border-color: rgba(99, 102, 241, 0.4);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.tech-pill i {
+  font-size: 0.78rem;
+}
+
+/* Universal text truncation helpers */
+.line-clamp-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+html:not(.dark) .project-card {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 4px 18px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+html:not(.dark) .project-card:hover {
+  border-color: #6366f1 !important;
+  box-shadow: 0 14px 30px -6px rgba(99, 102, 241, 0.16) !important;
+}
+
+html:not(.dark) .tech-pill {
+  background: #f1f5f9 !important;
+  color: #1e293b !important;
+  border-color: #cbd5e1 !important;
+}
+
+html:not(.dark) .tech-pill:hover {
+  background: #e2e8f0 !important;
+  border-color: #6366f1 !important;
+}
+
 /* ==========================================================================
-   Real Modern Tech Stack Showcase Styles (Devicon Cards)
+   Real Modern Tech Stack Showcase Styles (Devicon Flex Cards)
    ========================================================================== */
 .skills-cat-title {
-  font-size: 0.85rem;
+  font-size: 0.84rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: #94a3b8;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.1rem;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -465,40 +735,46 @@ body {
 
 .skills-cat-title::after {
   content: '';
-  flex: 1;
-  max-width: 90px;
+  width: 75px;
   height: 1.5px;
   background: linear-gradient(90deg, #6366f1, transparent);
 }
 
-.skill-card {
-  background: rgba(15, 23, 42, 0.65);
-  border: 1px solid rgba(51, 65, 85, 0.7);
-  border-radius: 1rem;
-  padding: 1.1rem 1.4rem;
+.skills-grid {
   display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.skill-card {
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(51, 65, 85, 0.7);
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  display: inline-flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.85rem;
   cursor: default;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+  min-width: 125px;
 }
 
 .skill-card::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at top left, rgba(99, 102, 241, 0.08), transparent 70%);
+  background: radial-gradient(circle at top left, rgba(99, 102, 241, 0.12), transparent 70%);
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.25s ease;
 }
 
 .skill-card:hover {
-  border-color: rgba(99, 102, 241, 0.6);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 28px -5px rgba(99, 102, 241, 0.2), 0 0 16px -2px rgba(99, 102, 241, 0.15);
-  background: rgba(30, 41, 59, 0.85);
+  border-color: rgba(99, 102, 241, 0.65);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px -4px rgba(99, 102, 241, 0.25), 0 0 14px -2px rgba(99, 102, 241, 0.15);
+  background: rgba(30, 41, 59, 0.9);
 }
 
 .skill-card:hover::before {
@@ -506,21 +782,22 @@ body {
 }
 
 .skill-icon {
-  font-size: 2.3rem;
+  font-size: 2.1rem;
   line-height: 1;
   flex-shrink: 0;
-  transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .skill-card:hover .skill-icon {
-  transform: scale(1.15);
+  transform: scale(1.14);
 }
 
 .skill-name {
-  font-size: 0.98rem;
+  font-size: 0.94rem;
   font-weight: 600;
   color: #f8fafc;
   letter-spacing: -0.01em;
+  white-space: nowrap;
   transition: color 0.2s ease;
 }
 
@@ -533,22 +810,22 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2.3rem;
-  height: 2.3rem;
-  font-size: 0.68rem;
+  width: 2.1rem;
+  height: 2.1rem;
+  font-size: 0.62rem;
   font-weight: 800;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   background: linear-gradient(135deg, #06b6d4, #0284c7);
   color: #ffffff;
-  border-radius: 0.6rem;
+  border-radius: 0.55rem;
   letter-spacing: -0.5px;
   flex-shrink: 0;
   box-shadow: 0 4px 10px -2px rgba(6, 182, 212, 0.3);
-  transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .skill-card:hover .rest-icon-custom {
-  transform: scale(1.15);
+  transform: scale(1.14);
 }
 
 /* Custom JSON badge */
@@ -556,21 +833,21 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2.3rem;
-  height: 2.3rem;
-  font-size: 0.95rem;
+  width: 2.1rem;
+  height: 2.1rem;
+  font-size: 0.9rem;
   font-weight: 800;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   background: linear-gradient(135deg, #f59e0b, #d97706);
   color: #ffffff;
-  border-radius: 0.6rem;
+  border-radius: 0.55rem;
   flex-shrink: 0;
   box-shadow: 0 4px 10px -2px rgba(245, 158, 11, 0.3);
-  transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .skill-card:hover .json-icon-custom {
-  transform: scale(1.15);
+  transform: scale(1.14);
 }
 
 /* Light mode overrides for Skill Cards */
@@ -585,12 +862,12 @@ html:not(.dark) .skills-cat-title::after {
 html:not(.dark) .skill-card {
   background: #ffffff !important;
   border: 1px solid #cbd5e1 !important;
-  box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0 3px 12px -2px rgba(0, 0, 0, 0.05) !important;
 }
 
 html:not(.dark) .skill-card:hover {
   border-color: #6366f1 !important;
-  box-shadow: 0 12px 28px -5px rgba(99, 102, 241, 0.2) !important;
+  box-shadow: 0 10px 24px -5px rgba(99, 102, 241, 0.2) !important;
   background: #f8fafc !important;
 }
 
@@ -600,6 +877,163 @@ html:not(.dark) .skill-name {
 
 html:not(.dark) .skill-card:hover .skill-name {
   color: #4f46e5 !important;
+}
+
+/* ==========================================================================
+   Mobile Performance & Clean UI Optimization
+   Zero-Lag 60fps/120fps Rendering on All Mobile Devices
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* 1. Turn off all heavy infinite GPU animations */
+  .aurora-blob-1,
+  .aurora-blob-2,
+  .aurora-blob-3 {
+    display: none !important;
+  }
+
+  /* Static elegant gradient ring instead of 360-degree rotating 200% conic gradient */
+  .avatar-rotating-ring::before {
+    animation: none !important;
+    background: linear-gradient(135deg, #06b6d4, #667eea, #a855f7) !important;
+  }
+
+  /* Disable button sheen sweep animation loop */
+  .btn-djangoblog::after {
+    display: none !important;
+    animation: none !important;
+  }
+
+  /* Disable floating & pulsing loops on mobile */
+  .animate-float,
+  .animate-float-delayed,
+  .animate-pulse-glow,
+  .pulse-ring,
+  .badge-ripple {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  /* Crisp static gradient text without infinite GPU rasterization */
+  .text-shimmer {
+    animation: none !important;
+    background: linear-gradient(135deg, #818cf8 0%, #c084fc 50%, #38bdf8 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+  }
+
+  /* 2. Zero-Lag Glass Surfaces (Eliminate backdrop-filter blur bottleneck) */
+  .glass-card {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: #0d1322 !important;
+    border: 1px solid rgba(102, 126, 234, 0.22) !important;
+    box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.45) !important;
+    transform: none !important;
+  }
+
+  /* Disable expensive radial gradient pseudo-element on mobile touch */
+  .glass-card::before {
+    display: none !important;
+  }
+
+  .glass-card:hover {
+    transform: none !important;
+    box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.45) !important;
+  }
+
+  .glass-nav {
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    background: rgba(7, 11, 20, 0.95) !important;
+  }
+
+  .glass-badge {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: #141c2e !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  }
+
+  /* 3. Off-screen content visibility for buttery smooth 60fps scrolling */
+  section#about,
+  section#skills,
+  section#projects,
+  section#github-activity,
+  section#contact {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 650px;
+  }
+
+  /* 4. Clean, compact, highly legible Skill Cards on phones */
+  .skill-card {
+    padding: 0.6rem 0.8rem;
+    min-width: 0;
+    gap: 0.55rem;
+    border-radius: 0.75rem;
+    background: #0d1322 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  }
+  
+  .skill-icon {
+    font-size: 1.5rem !important;
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+  }
+  
+  .skill-name {
+    font-size: 0.8rem !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .rest-icon-custom, .json-icon-custom {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+    font-size: 0.52rem !important;
+    border-radius: 0.45rem !important;
+  }
+
+  /* 5. Clean, sleek hero portrait & spacing on mobile */
+  .avatar-rotating-ring {
+    box-shadow: 0 0 25px -3px rgba(102, 126, 234, 0.35) !important;
+  }
+
+  #hero-identity-pill {
+    margin-top: 0.85rem !important;
+    padding: 0.45rem 0.95rem !important;
+    background: rgba(11, 15, 25, 0.95) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+}
+
+/* Light mode mobile overrides */
+@media (max-width: 768px) {
+  html:not(.dark) .glass-card {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05) !important;
+  }
+
+  html:not(.dark) .glass-nav {
+    background: rgba(255, 255, 255, 0.97) !important;
+  }
+
+  html:not(.dark) .glass-badge {
+    background: #f8fafc !important;
+    border: 1px solid #cbd5e1 !important;
+  }
+
+  html:not(.dark) .skill-card {
+    background: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+  }
+
+  html:not(.dark) #hero-identity-pill {
+    background: #ffffff !important;
+    border: 1.5px solid #cbd5e1 !important;
+  }
 }
 
 /* Project details modal backdrop & container */
@@ -1278,15 +1712,15 @@ h1, h2, h3, h4, h5, h6, p, a, span, button {
     height: 38px;
   }
 
-  /* Optimized Section Paddings for mobile screens */
+  /* Optimized Section Paddings for clean, snappy mobile screens */
   section {
-    padding-top: 4.5rem !important;
-    padding-bottom: 4.5rem !important;
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
   }
 
   section#home {
-    padding-top: 6.5rem !important;
-    padding-bottom: 3.5rem !important;
+    padding-top: 5.5rem !important;
+    padding-bottom: 2.5rem !important;
     min-height: auto;
   }
 

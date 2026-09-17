@@ -39,7 +39,12 @@ function initLucideIcons() {
    ========================================================================== */
 function initCursorGlow() {
   const glow = document.getElementById('cursor-ambient-glow');
-  if (!glow || window.innerWidth < 768) return;
+  if (
+    !glow || 
+    window.innerWidth < 768 || 
+    'ontouchstart' in window || 
+    navigator.maxTouchPoints > 0
+  ) return;
 
   let mouseX = window.innerWidth / 2;
   let mouseY = window.innerHeight / 2;
@@ -87,7 +92,12 @@ function initCursorGlow() {
    2. Interactive Mouse Spotlight & 3D Perspective Tilt (RAF Throttled)
    ========================================================================== */
 function initSpotlightEffect() {
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || window.innerWidth < 768) {
+  if (
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches || 
+    window.innerWidth < 768 ||
+    'ontouchstart' in window ||
+    navigator.maxTouchPoints > 0
+  ) {
     return;
   }
 
@@ -248,11 +258,18 @@ function initScrollProgress() {
   const progressBar = document.getElementById('scroll-progress');
   if (!progressBar) return;
 
+  let ticking = false;
   window.addEventListener('scroll', () => {
-    const scrollTop = window.scrollY;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-    progressBar.style.width = `${scrollPercent}%`;
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        progressBar.style.width = `${scrollPercent}%`;
+        ticking = false;
+      });
+      ticking = true;
+    }
   }, { passive: true });
 }
 
@@ -263,19 +280,28 @@ function initStickyNavbar() {
   const navbar = document.getElementById('main-nav');
   if (!navbar) return;
 
+  let ticking = false;
   const handleNavScroll = () => {
-    if (window.scrollY > 40) {
-      navbar.classList.add('glass-nav-scrolled');
-      navbar.classList.remove('py-5');
-      navbar.classList.add('py-3');
+    const isScrolled = window.scrollY > 25;
+    if (isScrolled) {
+      if (!navbar.classList.contains('glass-nav-scrolled')) {
+        navbar.classList.add('glass-nav-scrolled');
+      }
     } else {
-      navbar.classList.remove('glass-nav-scrolled');
-      navbar.classList.remove('py-3');
-      navbar.classList.add('py-5');
+      if (navbar.classList.contains('glass-nav-scrolled')) {
+        navbar.classList.remove('glass-nav-scrolled');
+      }
     }
+    ticking = false;
   };
 
-  window.addEventListener('scroll', handleNavScroll, { passive: true });
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(handleNavScroll);
+      ticking = true;
+    }
+  }, { passive: true });
+
   handleNavScroll();
 }
 
@@ -459,7 +485,7 @@ const projectsData = [
     category: 'fullstack',
     categoryName: 'Full Stack (Live)',
     badgeClass: 'bg-indigo-500/15 text-indigo-300 border-indigo-500/35',
-    image: 'assets/images/project-djangoblog.svg',
+    image: 'assets/images/project-djangoblog.png',
     description: 'A live, full-stack blogging web application deployed on Vercel. Engineered with Django and Python, featuring secure user authentication (signup, login, profile management), interactive post authoring, like reactions (❤️), comments (💬), author profiles, and a responsive reading feed.',
     features: [
       'Live in production on Vercel at https://blogdb-phi.vercel.app/',
@@ -481,7 +507,7 @@ const projectsData = [
     category: 'fullstack',
     categoryName: 'Full Stack',
     badgeClass: 'bg-cyan-500/15 text-cyan-300 border-cyan-500/35',
-    image: 'assets/images/project-student-quiz.svg',
+    image: 'assets/images/project-student-quiz.png',
     description: 'An academic evaluation and student records management platform. Built using Django and Python with an interactive online quiz module featuring active countdown timers, instantaneous scoring algorithms, and role-based student and instructor dashboards.',
     features: [
       'Interactive online quiz module with active countdown timer and automatic question progression',
@@ -497,47 +523,47 @@ const projectsData = [
     repoUrl: 'https://github.com/rhrafe78'
   },
   {
-    id: 'content-management-system',
-    title: 'Content Management System (CMS)',
-    subtitle: 'Database-Driven CMS with Custom Admin Moderation Panel',
+    id: 'hospital-management-system',
+    title: 'Hospital Management System (MediCare Portal)',
+    subtitle: 'Live Deployed Healthcare Platform with Doctor Scheduling & Patient REST APIs',
     category: 'fullstack',
-    categoryName: 'Full Stack',
-    badgeClass: 'bg-emerald-500/15 text-emerald-300 border-emerald-500/35',
-    image: 'assets/images/project-cms.svg',
-    description: 'A robust database-driven Content Management System built using Django. Features an administrative management panel allowing site owners to publish, categorize, edit, and organize dynamic content, media, and site data seamlessly.',
+    categoryName: 'Full Stack (Live)',
+    badgeClass: 'bg-cyan-500/15 text-cyan-300 border-cyan-500/35',
+    image: 'assets/images/project-hospital.png',
+    description: 'An enterprise healthcare management system built with Django and REST APIs. Features outpatient appointment scheduling, doctor availability calendars, electronic patient records, role-based access for medical staff, and normalized relational schemas.',
     features: [
-      'Database-driven architecture allowing non-technical administrators to manage content',
-      'Integrated administrative panel for real-time publishing, drafting, and scheduling',
-      'Category taxonomies, tag filtering, and dynamic content rendering',
-      'Role-based permission gating for content creators, editors, and superadmins',
-      'Fast query execution and clean template inheritance with modular components'
+      'Interactive appointment booking engine with doctor schedule conflict prevention',
+      'Secure role-based authentication separating doctors, receptionists, and patients',
+      'Electronic patient records management with diagnosis and prescription history',
+      'RESTful API endpoints engineered for medical telemetry and patient search',
+      'Normalized relational database architecture with PostgreSQL / SQLite support'
     ],
-    technologies: ['Django', 'Python', 'HTML5', 'CSS3', 'JavaScript', 'SQLite / MySQL'],
-    challenges: 'Providing an intuitive administration interface while enforcing strict security filters to sanitize input and prevent XSS injection.',
-    solutions: 'Customized Django Admin and custom dashboard views with form sanitization, CSRF tokens, and automated database migrations.',
-    demoUrl: 'https://blogdb-phi.vercel.app/',
-    repoUrl: 'https://github.com/rhrafe78'
+    technologies: ['Django', 'Python', 'Django REST Framework', 'JavaScript', 'HTML5/CSS3', 'Vercel Deployment', 'PostgreSQL / SQLite'],
+    challenges: 'Designing a concurrency-safe appointment scheduling engine that prevents double-booking when multiple patients request the same doctor slot simultaneously.',
+    solutions: 'Implemented database transactions with select_for_update locking in Django ORM, coupled with client-side real-time slot status validation.',
+    demoUrl: 'https://hospital-management-services-rif8.vercel.app/',
+    repoUrl: 'https://github.com/rhrafe78/Hospital-Management-System'
   },
   {
-    id: 'foodie-hub',
-    title: 'Foodie Hub Delivery UI',
-    subtitle: 'Modern Food Ordering & Interactive Menu UI',
+    id: 'aether-shopping-cart',
+    title: 'Aether — Cyberpunk E-Commerce & Shopping Cart',
+    subtitle: 'Live Deployed React Application at aether-shopping-cart-ten.vercel.app',
     category: 'frontend',
-    categoryName: 'Frontend UI',
-    badgeClass: 'bg-orange-500/15 text-orange-300 border-orange-500/35',
-    image: 'assets/images/project-foodie.svg',
-    description: 'A responsive, high-performance food delivery web interface crafted with semantic HTML5, modern Tailwind CSS, and vanilla JavaScript. Features dynamic category filtering, interactive dish customization, instant search, and a persistent cart drawer with live subtotal and tax calculation.',
+    categoryName: 'Frontend (React & Live)',
+    badgeClass: 'bg-cyan-500/15 text-cyan-300 border-cyan-500/35',
+    image: 'assets/images/project-aether.png',
+    description: 'A premium, modern cyberpunk-themed e-commerce and shopping cart web application deployed on Vercel. Engineered with React 18, ES Modules, and Tailwind CSS. Features category filtering (Electronics, Apparel, Accessories, Home), real-time cart state, dynamic quantity updates, tactile Add-to-Cart interactions, and a seamless slide-out cart drawer.',
     features: [
-      'Interactive menu catalog with instantaneous category and tag filtering',
-      'Slide-over cart drawer with real-time quantity modifiers and price calculation',
-      'Responsive design strictly tested across mobile (320px) to wide monitors (1440px+)',
-      'Smooth micro-interactions and tactile feedback on cart actions',
-      'Accessible keyboard focus states and screen-reader compliant aria-labels'
+      'Live in production on Vercel at https://aether-shopping-cart-ten.vercel.app/',
+      'Engineered with modern React 18 component hierarchy and native ES Modules',
+      'Interactive category filtering across high-fidelity tech, apparel, and lifestyle gadgets',
+      'Persistent shopping cart with dynamic item quantity controls and instantaneous total calculation',
+      'Sleek dark-mode aesthetic with neon glowing accents and micro-interactions'
     ],
-    technologies: ['HTML5', 'Tailwind CSS', 'JavaScript (ES6+)', 'LocalStorage', 'Responsive UI'],
-    challenges: 'Ensuring state synchronicity across multiple menu cards and the side-drawer cart without relying on bulky frontend state libraries.',
-    solutions: 'Implemented a lightweight event-driven state manager in pure JavaScript that updates badge counters and order subtotals reactively.',
-    demoUrl: 'https://blogdb-phi.vercel.app/',
+    technologies: ['React 18', 'JavaScript (ES6+)', 'Tailwind CSS', 'HTML5', 'Lucide Icons', 'Vercel Deployment'],
+    challenges: 'Designing a lightweight, high-performance shopping cart state manager in React with smooth animations, ensuring immediate cart drawer updates without layout shift.',
+    solutions: 'Built with optimized React state hooks, modular component structure, and responsive flex/grid layouts with fluid cart drawer transitions.',
+    demoUrl: 'https://aether-shopping-cart-ten.vercel.app/',
     repoUrl: 'https://github.com/rhrafe78'
   }
 ];
@@ -820,11 +846,18 @@ function initBackToTop() {
   const backToTopBtn = document.getElementById('back-to-top');
   if (!backToTopBtn) return;
 
+  let ticking = false;
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 400) {
-      backToTopBtn.classList.add('visible');
-    } else {
-      backToTopBtn.classList.remove('visible');
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        if (window.scrollY > 400) {
+          backToTopBtn.classList.add('visible');
+        } else {
+          backToTopBtn.classList.remove('visible');
+        }
+        ticking = false;
+      });
+      ticking = true;
     }
   }, { passive: true });
 
@@ -948,7 +981,18 @@ function initGitHubStats() {
     }
 
     if (Array.isArray(repos) && repos.length > 0 && reposContainer) {
-      const displayRepos = repos.slice(0, 6);
+      // Filter out assignments and task management repos, and prioritize Student_Management_Service as #1
+      const excludedRepos = ['module29_assignment', 'task_management', 'task-management', 'taskflow'];
+      let filteredRepos = repos.filter(repo => !excludedRepos.includes(repo.name.toLowerCase()));
+      
+      const studentIdx = filteredRepos.findIndex(repo => repo.name.toLowerCase() === 'student_management_service');
+      if (studentIdx > -1) {
+        const [studentRepo] = filteredRepos.splice(studentIdx, 1);
+        filteredRepos.unshift(studentRepo);
+      }
+
+      // Exactly 5 repositories displayed
+      const displayRepos = filteredRepos.slice(0, 5);
 
       reposContainer.innerHTML = displayRepos.map(repo => {
         const lang = repo.language || 'Python';
@@ -1005,8 +1049,8 @@ function initGitHubStats() {
   }
 
   // Check 15-minute session cache to eliminate redundant network traffic
-  const CACHE_KEY = `gh_cache_${username}`;
-  const CACHE_TIME_KEY = `gh_time_${username}`;
+  const CACHE_KEY = `gh_cache_v4_${username}`;
+  const CACHE_TIME_KEY = `gh_time_v4_${username}`;
   const CACHE_TTL = 15 * 60 * 1000;
 
   try {
@@ -1022,7 +1066,7 @@ function initGitHubStats() {
   // Fetch parallelized requests with fallback resilience
   Promise.all([
     fetch(`https://api.github.com/users/${username}`).then(r => r.ok ? r.json() : null).catch(() => null),
-    fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=6`).then(r => r.ok ? r.json() : null).catch(() => null)
+    fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=12`).then(r => r.ok ? r.json() : null).catch(() => null)
   ]).then(([user, repos]) => {
     if (user || repos) {
       try {
