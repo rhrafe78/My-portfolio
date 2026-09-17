@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" fill="none">
+  <defs>
+    <linearGradient id="sqBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a192f" />
+      <stop offset="100%" stop-color="#020c1b" />
+    </linearGradient>
+    <linearGradient id="sqCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f2fe" />
+      <stop offset="100%" stop-color="#4facfe" />
+    </linearGradient>
+    <linearGradient id="sqCard" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#172a45" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#0e1e35" stop-opacity="0.95" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="380" fill="url(#sqBg)" />
+  
+  <!-- Browser top bar -->
+  <rect width="600" height="36" fill="#0d213f" />
+  <circle cx="20" cy="18" r="5" fill="#ff5f56" />
+  <circle cx="36" cy="18" r="5" fill="#ffbd2e" />
+  <circle cx="52" cy="18" r="5" fill="#27c93f" />
+  <rect x="180" y="8" width="240" height="20" rx="6" fill="#07152b" />
+  <text x="300" y="22" font-family="monospace" font-size="10" fill="#64ffda" text-anchor="middle">liquidtripler.vercel.app</text>
+
+  <!-- Top Navigation in Mockup -->
+  <rect x="20" y="50" width="560" height="42" rx="8" fill="#112240" stroke="#233554" />
+  <text x="38" y="76" font-family="sans-serif" font-size="15" font-weight="bold" fill="url(#sqCyan)">EduQuiz<tspan fill="#ffffff">Pro</tspan></text>
+  <rect x="130" y="59" width="70" height="24" rx="5" fill="#00f2fe" fill-opacity="0.15" />
+  <text x="165" y="75" font-family="sans-serif" font-size="10" font-weight="600" fill="#00f2fe" text-anchor="middle">Students</text>
+  <text x="235" y="75" font-family="sans-serif" font-size="10" fill="#8892b0">Courses</text>
+  <text x="295" y="75" font-family="sans-serif" font-size="10" fill="#8892b0">Quizzes</text>
+
+  <!-- Countdown Timer Pill in Mockup -->
+  <rect x="440" y="57" width="124" height="28" rx="14" fill="#ef4444" fill-opacity="0.2" stroke="#ef4444" stroke-width="1" />
+  <circle cx="454" cy="71" r="4" fill="#ef4444" />
+  <text x="498" y="75" font-family="monospace" font-size="11" font-weight="bold" fill="#fca5a5" text-anchor="middle">Time: 09:45</text>
+
+  <!-- Main Grid Layout -->
+  <!-- Left Side: Interactive Quiz Question -->
+  <g transform="translate(20, 106)">
+    <rect width="330" height="254" rx="10" fill="url(#sqCard)" stroke="#233554" />
+    
+    <!-- Question Progress Bar -->
+    <rect x="20" y="16" width="290" height="5" rx="2.5" fill="#233554" />
+    <rect x="20" y="16" width="180" height="5" rx="2.5" fill="url(#sqCyan)" />
+    <text x="20" y="40" font-family="sans-serif" font-size="11" font-weight="bold" fill="#64ffda">Question 06 of 10</text>
+    <text x="310" y="40" font-family="sans-serif" font-size="10" fill="#8892b0" text-anchor="end">Score: 85%</text>
+
+    <!-- Question Title -->
+    <text x="20" y="66" font-family="sans-serif" font-size="12" font-weight="bold" fill="#ccd6f6">Which Django module handles database migrations?</text>
+
+    <!-- Quiz Option 1 -->
+    <rect x="20" y="82" width="290" height="32" rx="6" fill="#0a192f" stroke="#233554" />
+    <circle cx="36" cy="98" r="6" stroke="#8892b0" fill="none" stroke-width="1.5" />
+    <text x="52" y="102" font-family="sans-serif" font-size="10.5" fill="#8892b0">django.db.models</text>
+
+    <!-- Quiz Option 2 (Selected / Correct) -->
+    <rect x="20" y="122" width="290" height="32" rx="6" fill="#00f2fe" fill-opacity="0.1" stroke="#00f2fe" />
+    <circle cx="36" cy="138" r="6" stroke="#00f2fe" fill="#00f2fe" stroke-width="1.5" />
+    <circle cx="36" cy="138" r="2.5" fill="#0a192f" />
+    <text x="52" y="142" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#e6f1ff">django.core.management (makemigrations)</text>
+
+    <!-- Quiz Option 3 -->
+    <rect x="20" y="162" width="290" height="32" rx="6" fill="#0a192f" stroke="#233554" />
+    <circle cx="36" cy="178" r="6" stroke="#8892b0" fill="none" stroke-width="1.5" />
+    <text x="52" y="182" font-family="sans-serif" font-size="10.5" fill="#8892b0">django.views.generic</text>
+
+    <!-- Submit Action Button inside Card -->
+    <rect x="20" y="206" width="135" height="32" rx="6" fill="url(#sqCyan)" />
+    <text x="87" y="226" font-family="sans-serif" font-size="11" font-weight="bold" fill="#020c1b" text-anchor="middle">Next Question →</text>
+
+    <rect x="165" y="206" width="145" height="32" rx="6" fill="#233554" />
+    <text x="237" y="226" font-family="sans-serif" font-size="10" font-weight="bold" fill="#ccd6f6" text-anchor="middle">Auto-Score Result</text>
+  </g>
+
+  <!-- Right Side: Student Records & Auth Status -->
+  <g transform="translate(365, 106)">
+    <rect width="215" height="254" rx="10" fill="url(#sqCard)" stroke="#233554" />
+    <text x="16" y="28" font-family="sans-serif" font-size="12" font-weight="bold" fill="#ccd6f6">Student Records (CRUD)</text>
+    
+    <!-- Student Item 1 -->
+    <rect x="12" y="44" width="191" height="42" rx="6" fill="#0a192f" stroke="#1b2a4a" />
+    <circle cx="28" cy="65" r="10" fill="#00f2fe" fill-opacity="0.2" />
+    <text x="28" y="69" font-size="10" fill="#00f2fe" text-anchor="middle">👤</text>
+    <text x="44" y="59" font-family="sans-serif" font-size="10" font-weight="bold" fill="#e6f1ff">Rafe (Roll: 1042)</text>
+    <text x="44" y="73" font-family="sans-serif" font-size="8.5" fill="#64ffda">Score: 92% • Active</text>
+
+    <!-- Student Item 2 -->
+    <rect x="12" y="94" width="191" height="42" rx="6" fill="#0a192f" stroke="#1b2a4a" />
+    <circle cx="28" cy="115" r="10" fill="#8892b0" fill-opacity="0.2" />
+    <text x="28" y="119" font-size="10" fill="#8892b0" text-anchor="middle">👤</text>
+    <text x="44" y="109" font-family="sans-serif" font-size="10" font-weight="bold" fill="#e6f1ff">Hasan (Roll: 1038)</text>
+    <text x="44" y="123" font-family="sans-serif" font-size="8.5" fill="#8892b0">Score: 84% • Completed</text>
+
+    <!-- Student Item 3 -->
+    <rect x="12" y="144" width="191" height="42" rx="6" fill="#0a192f" stroke="#1b2a4a" />
+    <circle cx="28" cy="165" r="10" fill="#8892b0" fill-opacity="0.2" />
+    <text x="28" y="169" font-size="10" fill="#8892b0" text-anchor="middle">👤</text>
+    <text x="44" y="159" font-family="sans-serif" font-size="10" font-weight="bold" fill="#e6f1ff">Arif (Roll: 1055)</text>
+    <text x="44" y="173" font-family="sans-serif" font-size="8.5" fill="#8892b0">Score: 88% • Completed</text>
+
+    <!-- Add New Record Action -->
+    <rect x="12" y="202" width="191" height="34" rx="6" fill="#10b981" fill-opacity="0.2" stroke="#10b981" />
+    <text x="107" y="223" font-family="sans-serif" font-size="10.5" font-weight="bold" fill="#34d399" text-anchor="middle">+ Add / Edit Record</text>
+  </g>
+</svg>

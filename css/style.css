@@ -1,0 +1,1343 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+/* ==========================================================================
+   DjangoBlog-Inspired Vibrant Theme & Design Tokens
+   ========================================================================== */
+:root {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace, Consolas;
+  
+  /* DjangoBlog Signature Palette */
+  --color-blog-indigo: #667eea;
+  --color-blog-purple: #764ba2;
+  --color-blog-blue: #2563eb;
+  --color-blog-darkblue: #1d4ed8;
+  --color-cyan: #06b6d4;
+  --color-emerald: #10b981;
+  --color-bg-primary: #070b14;
+  --color-bg-secondary: #0b0f19;
+  --color-card-bg: rgba(17, 24, 39, 0.75);
+  --color-card-border: rgba(102, 126, 234, 0.25);
+  
+  --gradient-djangoblog: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-cyan-indigo: linear-gradient(135deg, #06b6d4 0%, #667eea 50%, #764ba2 100%);
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  background-color: var(--color-bg-primary);
+  color: #f8fafc;
+  color-scheme: dark;
+}
+
+body {
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Custom DjangoBlog Glowing Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #070b14;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #667eea, #764ba2, #2563eb);
+  border-radius: 6px;
+  border: 2px solid #070b14;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #818cf8, #a78bfa, #3b82f6);
+}
+
+/* Code font helper */
+.font-mono-code {
+  font-family: var(--font-mono);
+}
+
+/* ==========================================================================
+   Cosmic Aurora & Background Mesh Animations
+   ========================================================================== */
+@keyframes auroraMove1 {
+  0% {
+    transform: translate(0px, 0px) scale(1) rotate(0deg);
+  }
+  33% {
+    transform: translate(60px, -70px) scale(1.18) rotate(15deg);
+  }
+  66% {
+    transform: translate(-50px, 50px) scale(0.9) rotate(-12deg);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1) rotate(0deg);
+  }
+}
+
+@keyframes auroraMove2 {
+  0% {
+    transform: translate(0px, 0px) scale(1) rotate(0deg);
+  }
+  33% {
+    transform: translate(-70px, 60px) scale(1.22) rotate(-18deg);
+  }
+  66% {
+    transform: translate(60px, -50px) scale(0.88) rotate(14deg);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1) rotate(0deg);
+  }
+}
+
+@keyframes auroraMove3 {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: translate(45px, 45px) scale(1.12);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.aurora-blob-1,
+.aurora-blob-2,
+.aurora-blob-3 {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.aurora-blob-1 {
+  animation: auroraMove1 16s ease-in-out infinite alternate;
+}
+
+.aurora-blob-2 {
+  animation: auroraMove2 20s ease-in-out infinite alternate-reverse;
+}
+
+.aurora-blob-3 {
+  animation: auroraMove3 14s ease-in-out infinite alternate;
+}
+
+/* Mobile Lightweight GPU Optimization: static blur instead of heavy ongoing GPU animation */
+@media (max-width: 768px) {
+  .aurora-blob-1,
+  .aurora-blob-2,
+  .aurora-blob-3 {
+    animation: none !important;
+    filter: blur(45px) !important;
+    opacity: 0.45 !important;
+  }
+}
+
+/* Subtle background grid texture */
+.bg-grid-pattern {
+  background-size: 36px 36px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+}
+
+/* ==========================================================================
+   DjangoBlog Shimmer & Typography
+   ========================================================================== */
+@keyframes textGradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.text-shimmer {
+  background: linear-gradient(90deg, #667eea, #a78bfa, #c084fc, #38bdf8, #667eea);
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textGradientShift 5s ease infinite;
+}
+
+.text-gradient-db {
+  background: linear-gradient(135deg, #667eea 0%, #a78bfa 50%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes cursorBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.typing-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 1.15em;
+  background: #667eea;
+  margin-left: 4px;
+  vertical-align: middle;
+  border-radius: 1px;
+  animation: cursorBlink 0.9s infinite;
+}
+
+/* ==========================================================================
+   Interactive Cards with DjangoBlog Spotlight & Glassmorphism
+   ========================================================================== */
+.glass-nav {
+  background: rgba(7, 11, 20, 0.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(102, 126, 234, 0.15);
+}
+
+.glass-nav-scrolled {
+  background: rgba(7, 11, 20, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(102, 126, 234, 0.35);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.85), 0 0 20px -5px rgba(102, 126, 234, 0.25);
+}
+
+.glass-card {
+  position: relative;
+  background: rgba(17, 24, 39, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), 
+              border-color 0.35s ease, 
+              box-shadow 0.35s ease;
+  overflow: hidden;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: radial-gradient(350px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
+              rgba(102, 126, 234, 0.3), 
+              rgba(118, 75, 162, 0.2), 
+              transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.glass-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(102, 126, 234, 0.55);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.75),
+              0 0 30px -5px rgba(102, 126, 234, 0.28),
+              0 0 15px -3px rgba(118, 75, 162, 0.25);
+}
+
+.glass-card:hover::before {
+  opacity: 1;
+}
+
+.glass-badge {
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: all 0.25s ease;
+}
+
+.glass-badge:hover {
+  border-color: rgba(102, 126, 234, 0.45);
+  box-shadow: 0 0 15px -3px rgba(102, 126, 234, 0.3);
+}
+
+/* DjangoBlog Hero Banner Style */
+.hero-banner-djangoblog {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  box-shadow: 0 10px 25px -5px rgba(102, 126, 234, 0.4), 0 8px 10px -6px rgba(118, 75, 162, 0.3);
+}
+
+/* Glow Utilities */
+.glow-db {
+  box-shadow: 0 0 35px -5px rgba(102, 126, 234, 0.4);
+}
+
+.glow-purple {
+  box-shadow: 0 0 35px -5px rgba(118, 75, 162, 0.4);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 35px -5px rgba(6, 182, 212, 0.35);
+}
+
+/* Top Progress Scroll Indicator */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #667eea, #764ba2, #06b6d4, #ec4899);
+  width: 0%;
+  z-index: 100;
+  box-shadow: 0 0 12px rgba(102, 126, 234, 0.8);
+  transition: width 0.1s linear;
+}
+
+/* ==========================================================================
+   Animations & Micro-interactions
+   ========================================================================== */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+}
+
+@keyframes float-reverse {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(10px) rotate(-1deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.58;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes pulseRing {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(102, 126, 234, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(102, 126, 234, 0);
+  }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-reverse 6s ease-in-out 1s infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 7s ease-in-out infinite;
+}
+
+.pulse-ring {
+  animation: pulseRing 2s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+
+/* Skill Progress Bar Animated Transition */
+.skill-progress-fill {
+  transition: width 1.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 0 12px rgba(102, 126, 234, 0.45);
+}
+
+/* Stat Counter Numbers Style */
+.counter-number {
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
+  transition: all 0.3s ease;
+}
+
+/* Live Badge Glow & Ripple */
+@keyframes badgeRipple {
+  0% {
+    box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.55);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(102, 126, 234, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(102, 126, 234, 0);
+  }
+}
+
+.badge-ripple {
+  animation: badgeRipple 2.2s infinite;
+}
+
+/* Reveal on scroll styling */
+.reveal-init {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Active navigation link indicator */
+.nav-link {
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(-50%);
+  box-shadow: 0 0 8px #667eea;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 80%;
+}
+
+.nav-link.active {
+  color: #a5b4fc;
+  font-weight: 600;
+  text-shadow: 0 0 12px rgba(102, 126, 234, 0.5);
+}
+
+/* Project Card Filter Transitions */
+.project-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card.filter-hidden {
+  opacity: 0;
+  transform: scale(0.94);
+  pointer-events: none;
+  display: none !important;
+}
+
+.project-card.filter-show {
+  opacity: 1;
+  transform: scale(1);
+  display: flex !important;
+}
+
+/* ==========================================================================
+   Real Modern Tech Stack Showcase Styles (Devicon Cards)
+   ========================================================================== */
+.skills-cat-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #94a3b8;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.skills-cat-title::after {
+  content: '';
+  flex: 1;
+  max-width: 90px;
+  height: 1.5px;
+  background: linear-gradient(90deg, #6366f1, transparent);
+}
+
+.skill-card {
+  background: rgba(15, 23, 42, 0.65);
+  border: 1px solid rgba(51, 65, 85, 0.7);
+  border-radius: 1rem;
+  padding: 1.1rem 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: default;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(99, 102, 241, 0.08), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.skill-card:hover {
+  border-color: rgba(99, 102, 241, 0.6);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px -5px rgba(99, 102, 241, 0.2), 0 0 16px -2px rgba(99, 102, 241, 0.15);
+  background: rgba(30, 41, 59, 0.85);
+}
+
+.skill-card:hover::before {
+  opacity: 1;
+}
+
+.skill-icon {
+  font-size: 2.3rem;
+  line-height: 1;
+  flex-shrink: 0;
+  transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.skill-card:hover .skill-icon {
+  transform: scale(1.15);
+}
+
+.skill-name {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: #f8fafc;
+  letter-spacing: -0.01em;
+  transition: color 0.2s ease;
+}
+
+.skill-card:hover .skill-name {
+  color: #a5b4fc;
+}
+
+/* Custom REST API badge */
+.rest-icon-custom {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.3rem;
+  height: 2.3rem;
+  font-size: 0.68rem;
+  font-weight: 800;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  background: linear-gradient(135deg, #06b6d4, #0284c7);
+  color: #ffffff;
+  border-radius: 0.6rem;
+  letter-spacing: -0.5px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px -2px rgba(6, 182, 212, 0.3);
+  transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.skill-card:hover .rest-icon-custom {
+  transform: scale(1.15);
+}
+
+/* Custom JSON badge */
+.json-icon-custom {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.3rem;
+  height: 2.3rem;
+  font-size: 0.95rem;
+  font-weight: 800;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: #ffffff;
+  border-radius: 0.6rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px -2px rgba(245, 158, 11, 0.3);
+  transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.skill-card:hover .json-icon-custom {
+  transform: scale(1.15);
+}
+
+/* Light mode overrides for Skill Cards */
+html:not(.dark) .skills-cat-title {
+  color: #334155 !important;
+}
+
+html:not(.dark) .skills-cat-title::after {
+  background: linear-gradient(90deg, #6366f1, transparent) !important;
+}
+
+html:not(.dark) .skill-card {
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+html:not(.dark) .skill-card:hover {
+  border-color: #6366f1 !important;
+  box-shadow: 0 12px 28px -5px rgba(99, 102, 241, 0.2) !important;
+  background: #f8fafc !important;
+}
+
+html:not(.dark) .skill-name {
+  color: #0f172a !important;
+}
+
+html:not(.dark) .skill-card:hover .skill-name {
+  color: #4f46e5 !important;
+}
+
+/* Project details modal backdrop & container */
+#project-modal {
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#project-modal.modal-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+#project-modal.modal-closed {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+#modal-content {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#project-modal.modal-open #modal-content {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+#project-modal.modal-closed #modal-content {
+  transform: scale(0.94) translateY(16px);
+  opacity: 0;
+}
+
+/* Toast Feedback Notification */
+#toast-notification {
+  transform: translateY(100px);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease, visibility 0.4s ease;
+}
+
+#toast-notification.toast-show {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Back to Top Button */
+#back-to-top {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+
+#back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Form input styling */
+.form-input {
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  background: rgba(15, 23, 42, 0.95);
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.28), 0 0 15px -3px rgba(118, 75, 162, 0.3);
+}
+
+.form-input.input-error {
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2) !important;
+}
+
+.form-input.input-success {
+  border-color: #10b981 !important;
+}
+
+/* DjangoBlog Gradient Glowing Button with Subtle Sheen Animation */
+@keyframes buttonShine {
+  0% {
+    left: -100%;
+  }
+  25%, 100% {
+    left: 150%;
+  }
+}
+
+.btn-djangoblog {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 15px -2px rgba(102, 126, 234, 0.4);
+  transition: all 0.25s ease;
+}
+
+.btn-djangoblog::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -100%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+  transform: rotate(25deg);
+  animation: buttonShine 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  pointer-events: none;
+}
+
+.btn-djangoblog:hover {
+  background: linear-gradient(135deg, #5a6fe0 0%, #6b4393 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px -4px rgba(102, 126, 234, 0.6), 0 0 15px rgba(118, 75, 162, 0.4);
+}
+
+/* Hypnotic Rotating Gradient Border for Circular Avatar */
+@keyframes spinConic {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.avatar-rotating-ring {
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 0 35px -5px rgba(102, 126, 234, 0.45);
+}
+
+.avatar-rotating-ring::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    from 0deg,
+    #06b6d4,
+    #667eea,
+    #a855f7,
+    #ec4899,
+    #06b6d4
+  );
+  animation: spinConic 9s linear infinite;
+  z-index: 0;
+}
+
+.btn-outline-db {
+  background: transparent;
+  color: #ffffff;
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  transition: all 0.25s ease;
+}
+
+.btn-outline-db:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.7);
+  transform: translateY(-2px);
+}
+
+/* Accessibility Focus Ring */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   Light Mode Variables & Theme Overrides
+   ========================================================================== */
+html {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html:not(.dark) {
+  --color-bg-primary: #f8fafc;
+  --color-bg-secondary: #f1f5f9;
+  --color-card-bg: #ffffff;
+  --color-card-border: #e2e8f0;
+  color-scheme: light;
+}
+
+/* Remove blurry ambient aurora glow fog in light mode */
+html:not(.dark) .aurora-blob-1,
+html:not(.dark) .aurora-blob-2,
+html:not(.dark) .aurora-blob-3 {
+  opacity: 0 !important;
+  display: none !important;
+}
+
+/* Clear background and primary text color */
+html:not(.dark) body {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+/* Crisp high-contrast headings */
+html:not(.dark) h1,
+html:not(.dark) h2,
+html:not(.dark) h3,
+html:not(.dark) h4,
+html:not(.dark) .text-white {
+  color: #0f172a !important;
+}
+
+/* Deep, sharp body paragraphs & readable descriptions */
+html:not(.dark) p,
+html:not(.dark) .text-slate-100,
+html:not(.dark) .text-slate-200,
+html:not(.dark) .text-slate-300 {
+  color: #1e293b !important;
+}
+
+/* Secondary descriptions, subtitles & metadata (crisp slate-700 instead of faded light gray) */
+html:not(.dark) .text-slate-400,
+html:not(.dark) .text-slate-500 {
+  color: #334155 !important;
+}
+
+/* High-contrast animated shimmer text for light backgrounds */
+html:not(.dark) .text-shimmer {
+  background: linear-gradient(90deg, #1e1b4b, #4338ca, #6b21a8, #0369a1, #1e1b4b) !important;
+  background-size: 250% auto !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* Deep vibrant colored accents replacing invisible pastel shades */
+html:not(.dark) .text-indigo-100,
+html:not(.dark) .text-indigo-200,
+html:not(.dark) .text-indigo-300,
+html:not(.dark) .text-indigo-400 {
+  color: #4338ca !important; /* Rich indigo 700 */
+}
+
+html:not(.dark) .text-cyan-200,
+html:not(.dark) .text-cyan-300,
+html:not(.dark) .text-cyan-400,
+html:not(.dark) .text-sky-300,
+html:not(.dark) .text-sky-400 {
+  color: #0369a1 !important; /* Vivid sky 700 */
+}
+
+html:not(.dark) .text-emerald-200,
+html:not(.dark) .text-emerald-300,
+html:not(.dark) .text-emerald-400,
+html:not(.dark) .text-teal-300,
+html:not(.dark) .text-teal-400 {
+  color: #047857 !important; /* Deep emerald 700 */
+}
+
+html:not(.dark) .text-purple-100,
+html:not(.dark) .text-purple-200,
+html:not(.dark) .text-purple-300,
+html:not(.dark) .text-purple-400 {
+  color: #6b21a8 !important; /* Deep royal purple 800 */
+}
+
+html:not(.dark) .text-yellow-300,
+html:not(.dark) .text-yellow-400,
+html:not(.dark) .text-amber-400 {
+  color: #b45309 !important; /* Deep golden amber 700 */
+}
+
+html:not(.dark) .text-rose-400 {
+  color: #be123c !important; /* Crisp rose 700 */
+}
+
+/* Buttons with dark or gradient fills MUST keep crisp pure white text */
+html:not(.dark) .btn-djangoblog,
+html:not(.dark) .btn-djangoblog *,
+html:not(.dark) [class*="bg-gradient-to"] *,
+html:not(.dark) [class*="bg-gradient-to"],
+html:not(.dark) .view-project-btn,
+html:not(.dark) .view-project-btn *,
+html:not(.dark) #contact-submit-btn,
+html:not(.dark) #contact-submit-btn *,
+html:not(.dark) #toast-notification,
+html:not(.dark) #toast-notification * {
+  color: #ffffff !important;
+}
+
+/* Section backgrounds in light mode */
+html:not(.dark) section#home,
+html:not(.dark) section#about,
+html:not(.dark) section#skills,
+html:not(.dark) section#projects,
+html:not(.dark) section#github-activity,
+html:not(.dark) section#contact {
+  background: #f8fafc !important;
+}
+
+/* Crisp card backgrounds with sharp, modern borders and subtle elevation */
+html:not(.dark) .glass-card {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 6px -1px rgba(0, 0, 0, 0.03) !important;
+}
+
+html:not(.dark) .glass-card:hover {
+  border-color: #818cf8 !important;
+  box-shadow: 0 12px 30px -5px rgba(99, 102, 241, 0.15), 0 4px 12px -2px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Hero Avatar, Identity Pill & Deploy Badge in Light Mode */
+html:not(.dark) .avatar-rotating-ring .bg-slate-950 {
+  background-color: #ffffff !important;
+}
+
+html:not(.dark) #hero-identity-pill,
+html:not(.dark) .bg-slate-950\/90 {
+  background: #ffffff !important;
+  border: 1.5px solid #cbd5e1 !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 0 15px -3px rgba(99, 102, 241, 0.15) !important;
+}
+
+html:not(.dark) #hero-identity-pill span.text-white {
+  color: #0f172a !important;
+}
+
+html:not(.dark) #hero-identity-pill svg {
+  color: #0284c7 !important;
+}
+
+html:not(.dark) #hero-identity-pill .bg-slate-700\/80 {
+  background-color: #cbd5e1 !important;
+}
+
+html:not(.dark) #hero-identity-pill .bg-emerald-500\/20 {
+  background-color: #ecfdf5 !important;
+  border-color: #a7f3d0 !important;
+}
+
+html:not(.dark) #hero-identity-pill .text-emerald-300 {
+  color: #047857 !important;
+  font-weight: 700 !important;
+}
+
+html:not(.dark) #hero-deploy-badge {
+  background-color: #ffffff !important;
+  border: 1.5px solid #d8b4fe !important;
+  box-shadow: 0 8px 20px -3px rgba(147, 51, 234, 0.15) !important;
+}
+
+html:not(.dark) #hero-deploy-badge .text-purple-200 {
+  color: #6b21a8 !important;
+  font-weight: 700 !important;
+}
+
+/* Secondary item boxes inside cards (e.g. key principles, contact cards, skill cards) */
+html:not(.dark) .bg-slate-900,
+html:not(.dark) .bg-slate-900\/60,
+html:not(.dark) .bg-slate-900\/70,
+html:not(.dark) .bg-slate-900\/80,
+html:not(.dark) .bg-slate-900\/90,
+html:not(.dark) .bg-slate-950,
+html:not(.dark) .bg-slate-950\/60,
+html:not(.dark) .bg-slate-950\/80 {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+}
+
+html:not(.dark) .border-slate-800,
+html:not(.dark) .border-slate-800\/80,
+html:not(.dark) .border-slate-800\/60,
+html:not(.dark) .border-slate-700 {
+  border-color: #cbd5e1 !important;
+}
+
+/* Badges and tag pills with crisp borders */
+html:not(.dark) .glass-badge {
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #1e293b !important;
+  box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+html:not(.dark) [class*="bg-indigo-950"],
+html:not(.dark) [class*="bg-slate-800"] {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+}
+
+/* Navbar in light mode */
+html:not(.dark) .glass-nav {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-bottom: 1px solid #cbd5e1 !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.04) !important;
+}
+
+html:not(.dark) .desktop-nav-link {
+  color: #334155 !important;
+  font-weight: 500 !important;
+}
+
+html:not(.dark) .desktop-nav-link:hover,
+html:not(.dark) .desktop-nav-link.active-nav {
+  color: #4338ca !important;
+  background-color: #e0e7ff !important;
+}
+
+html:not(.dark) .mobile-nav-link {
+  color: #1e293b !important;
+}
+
+html:not(.dark) #mobile-menu {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+}
+
+/* Form inputs in light mode */
+html:not(.dark) .form-input {
+  background-color: #ffffff !important;
+  border: 1.5px solid #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+html:not(.dark) .form-input::placeholder {
+  color: #94a3b8 !important;
+}
+
+html:not(.dark) .form-input:focus {
+  border-color: #6366f1 !important;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2) !important;
+}
+
+/* Modal content in light mode */
+html:not(.dark) #modal-content {
+  background-color: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Skill progress bar track */
+html:not(.dark) .bg-slate-800.rounded-full {
+  background-color: #e2e8f0 !important;
+}
+
+/* Toast notification styling in light mode */
+html:not(.dark) #toast-notification {
+  background-color: #0f172a !important;
+  border-color: #38bdf8 !important;
+  box-shadow: 0 20px 30px -5px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* ==========================================================================
+   Footer & Back to Top in Light Mode
+   ========================================================================== */
+html:not(.dark) footer {
+  background: #ffffff !important;
+  border-top: 1px solid #e2e8f0 !important;
+  color: #334155 !important;
+}
+
+html:not(.dark) footer .border-slate-800\/80,
+html:not(.dark) footer .border-slate-900,
+html:not(.dark) footer .border-b {
+  border-color: #e2e8f0 !important;
+}
+
+html:not(.dark) footer .text-white {
+  color: #0f172a !important;
+}
+
+html:not(.dark) footer p,
+html:not(.dark) footer .text-slate-400 {
+  color: #475569 !important;
+}
+
+html:not(.dark) footer a {
+  color: #334155 !important;
+  transition: color 0.2s ease;
+}
+
+html:not(.dark) footer a:hover {
+  color: #4338ca !important;
+}
+
+html:not(.dark) footer .text-cyan-400\/80 {
+  color: #4338ca !important;
+  font-weight: 600 !important;
+}
+
+/* Footer social icon action buttons in light mode */
+html:not(.dark) footer .p-2 {
+  background-color: #f1f5f9 !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #334155 !important;
+}
+
+html:not(.dark) footer .p-2:hover {
+  background-color: #e0e7ff !important;
+  border-color: #818cf8 !important;
+  color: #4338ca !important;
+  transform: translateY(-2px);
+}
+
+/* Floating Back-to-Top Button in Light Mode */
+html:not(.dark) #back-to-top {
+  background-color: #ffffff !important;
+  border: 1.5px solid #cbd5e1 !important;
+  color: #4338ca !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.12), 0 4px 10px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+html:not(.dark) #back-to-top:hover {
+  background-color: #f1f5f9 !important;
+  border-color: #4338ca !important;
+  color: #4338ca !important;
+  transform: translateY(-3px) scale(1.05);
+}
+
+html:not(.dark) #back-to-top i {
+  color: #4338ca !important;
+}
+
+
+/* Secondary and action buttons in light mode */
+html:not(.dark) .cv-download-btn {
+  background-color: #ffffff !important;
+  color: #1e293b !important;
+  border: 1.5px solid #cbd5e1 !important;
+  box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+html:not(.dark) .cv-download-btn:hover {
+  background-color: #f1f5f9 !important;
+  border-color: #4338ca !important;
+  color: #4338ca !important;
+}
+
+html:not(.dark) a[href="#contact"].btn-glow {
+  background-color: #ffffff !important;
+  color: #1e293b !important;
+  border: 1.5px solid #cbd5e1 !important;
+}
+
+html:not(.dark) a[href="#contact"].btn-glow:hover {
+  background-color: #f1f5f9 !important;
+  border-color: #4338ca !important;
+  color: #4338ca !important;
+}
+
+/* Category filter buttons in light mode */
+html:not(.dark) .filter-btn:not(.btn-djangoblog) {
+  background-color: #ffffff !important;
+  color: #334155 !important;
+  border: 1.5px solid #cbd5e1 !important;
+}
+
+html:not(.dark) .filter-btn:not(.btn-djangoblog):hover {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+
+/* Theme Switcher Button Styling */
+.theme-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(102, 126, 234, 0.3);
+  color: #f1f5f9;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.theme-toggle-btn:hover {
+  border-color: rgba(102, 126, 234, 0.6);
+  transform: scale(1.08);
+  box-shadow: 0 0 15px rgba(102, 126, 234, 0.3);
+}
+
+html:not(.dark) .theme-toggle-btn {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(203, 213, 225, 0.85);
+  color: #0f172a;
+}
+
+.theme-toggle-btn .sun-icon {
+  display: none;
+}
+
+.theme-toggle-btn .moon-icon {
+  display: block;
+}
+
+html:not(.dark) .theme-toggle-btn .sun-icon {
+  display: block;
+}
+
+html:not(.dark) .theme-toggle-btn .moon-icon {
+  display: none;
+}
+
+/* GitHub Stats Card Styles */
+.github-card {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.github-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-float,
+  .animate-float-delayed,
+  .animate-pulse-glow,
+  .aurora-blob-1,
+  .aurora-blob-2,
+  .aurora-blob-3,
+  .text-shimmer,
+  .reveal-init {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
+/* ==========================================================================
+   Comprehensive Multi-Device Responsiveness (Mobile Phone, Tablet, Laptop, 4K)
+   ========================================================================== */
+
+/* Universal horizontal scroll prevention across all browsers and devices */
+html,
+body {
+  max-width: 100vw;
+  width: 100%;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Prevent text clipping / awkward hyphenation on small screens */
+h1, h2, h3, h4, h5, h6, p, a, span, button {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* Mobile Phones (< 640px) */
+@media (max-width: 639px) {
+  /* Comfortable touch targets (minimum 44px) */
+  .mobile-nav-link {
+    min-height: 46px;
+    display: flex;
+    align-items: center;
+  }
+
+  .theme-toggle-btn {
+    width: 38px;
+    height: 38px;
+  }
+
+  /* Optimized Section Paddings for mobile screens */
+  section {
+    padding-top: 4.5rem !important;
+    padding-bottom: 4.5rem !important;
+  }
+
+  section#home {
+    padding-top: 6.5rem !important;
+    padding-bottom: 3.5rem !important;
+    min-height: auto;
+  }
+
+  /* Floating Back-to-Top button on phones */
+  #back-to-top {
+    bottom: 1.25rem !important;
+    left: 1.25rem !important;
+    padding: 0.65rem !important;
+  }
+
+  /* Toast notifications adapt to mobile screen margins */
+  #toast-notification {
+    left: 1rem !important;
+    right: 1rem !important;
+    bottom: 1rem !important;
+    max-width: calc(100vw - 2rem) !important;
+  }
+
+  /* Project Modal on mobile phones */
+  #modal-content {
+    margin: 0.75rem !important;
+    padding: 1.25rem !important;
+    max-height: 90vh !important;
+  }
+}
+
+/* Tablets & Small Laptops (640px to 1023px) */
+@media (min-width: 640px) and (max-width: 1023px) {
+  section {
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
+  }
+
+  section#home {
+    padding-top: 8rem !important;
+  }
+}
+
+/* Laptops & Desktops (1024px to 1535px) */
+@media (min-width: 1024px) {
+  section {
+    padding-top: 6rem !important;
+    padding-bottom: 6rem !important;
+  }
+}
+
+/* Ultra-wide & 4K Displays (1536px+) */
+@media (min-width: 1536px) {
+  .max-w-7xl {
+    max-width: 86rem;
+  }
+}
+
+

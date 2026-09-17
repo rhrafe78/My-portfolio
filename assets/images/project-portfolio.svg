@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" fill="none">
+  <defs>
+    <linearGradient id="pBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#030712" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="pCyanPink" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+  </defs>
+  <rect width="600" height="380" fill="url(#pBg)" />
+  <rect width="600" height="36" fill="#111827" />
+  <circle cx="20" cy="18" r="5" fill="#ef4444" />
+  <circle cx="36" cy="18" r="5" fill="#f59e0b" />
+  <circle cx="52" cy="18" r="5" fill="#10b981" />
+  <text x="80" y="22" font-family="sans-serif" font-size="12" fill="#94a3b8">portfolio-system.v2</text>
+
+  <g transform="translate(40, 60)">
+    <rect width="520" height="280" rx="14" fill="#090d16" stroke="#1e293b" stroke-width="1.5" />
+    <rect x="30" y="30" width="130" height="20" rx="10" fill="#3b82f6" fill-opacity="0.15" stroke="#3b82f6" stroke-width="1" />
+    <text x="95" y="44" font-family="sans-serif" font-size="10" font-weight="bold" fill="#60a5fa" text-anchor="middle">FULL-STACK DEV</text>
+    
+    <text x="30" y="90" font-family="sans-serif" font-size="24" font-weight="bold" fill="url(#pCyanPink)">Crafting Seamless</text>
+    <text x="30" y="122" font-family="sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">Modern Web Apps</text>
+
+    <text x="30" y="155" font-family="sans-serif" font-size="12" fill="#94a3b8">Fast • Accessible • Responsive • Clean Code</text>
+
+    <rect x="30" y="185" width="120" height="36" rx="8" fill="#2563eb" />
+    <text x="90" y="208" font-family="sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">Explore Work</text>
+
+    <rect x="165" y="185" width="120" height="36" rx="8" fill="#1e293b" stroke="#334155" />
+    <text x="225" y="208" font-family="sans-serif" font-size="12" font-weight="bold" fill="#cbd5e1" text-anchor="middle">Get In Touch</text>
+
+    <rect x="330" y="40" width="160" height="200" rx="10" fill="#111827" stroke="#374151" />
+    <rect x="342" y="55" width="136" height="36" rx="6" fill="#1f2937" />
+    <rect x="342" y="100" width="62" height="60" rx="6" fill="#1e293b" />
+    <rect x="414" y="100" width="64" height="60" rx="6" fill="#1e293b" />
+    <rect x="342" y="170" width="136" height="55" rx="6" fill="#1f2937" />
+  </g>
+</svg>

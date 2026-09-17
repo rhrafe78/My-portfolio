@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" fill="none">
+  <defs>
+    <linearGradient id="dbHeroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#667eea" />
+      <stop offset="100%" stop-color="#764ba2" />
+    </linearGradient>
+    <linearGradient id="dbCardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="dbBadgeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#667eea" />
+      <stop offset="100%" stop-color="#764ba2" />
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="380" fill="#0b0f19" />
+  
+  <!-- Browser top navigation bar -->
+  <rect width="600" height="36" fill="#1e293b" />
+  <circle cx="20" cy="18" r="5" fill="#ef4444" />
+  <circle cx="36" cy="18" r="5" fill="#f59e0b" />
+  <circle cx="52" cy="18" r="5" fill="#10b981" />
+  <rect x="180" y="8" width="240" height="20" rx="6" fill="#0b0f19" />
+  <text x="300" y="22" font-family="sans-serif" font-size="10.5" fill="#a5b4fc" text-anchor="middle">blogdb-phi.vercel.app</text>
+
+  <!-- App Header / Navbar -->
+  <rect x="20" y="48" width="560" height="42" rx="8" fill="#111827" stroke="#374151" stroke-width="0.8" />
+  <text x="38" y="74" font-family="sans-serif" font-size="16" font-weight="bold" fill="#667eea">✍️ <tspan fill="#ffffff">Django</tspan><tspan fill="#a78bfa">Blog</tspan></text>
+  
+  <text x="380" y="73" font-family="sans-serif" font-size="11" font-weight="500" fill="#cbd5e1">🏠 Home</text>
+  <rect x="445" y="56" width="56" height="26" rx="5" fill="#1e293b" />
+  <text x="473" y="73" font-family="sans-serif" font-size="11" font-weight="500" fill="#cbd5e1" text-anchor="middle">Login</text>
+  <rect x="510" y="56" width="60" height="26" rx="5" fill="url(#dbHeroGrad)" />
+  <text x="540" y="73" font-family="sans-serif" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">Register</text>
+
+  <!-- Hero Banner matching real website -->
+  <g transform="translate(20, 100)">
+    <rect width="560" height="96" rx="12" fill="url(#dbHeroGrad)" filter="url(#cardShadow)" />
+    <text x="280" y="38" font-family="sans-serif" font-size="20" font-weight="800" fill="#ffffff" text-anchor="middle">Welcome to DjangoBlog ✍️</text>
+    <text x="280" y="58" font-family="sans-serif" font-size="11.5" fill="#e0e7ff" text-anchor="middle">A place to share your thoughts, ideas, and stories with the world.</text>
+    
+    <rect x="195" y="68" width="85" height="20" rx="4" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1" />
+    <text x="237" y="82" font-family="sans-serif" font-size="9.5" font-weight="bold" fill="#ffffff" text-anchor="middle">🚀 Get Started</text>
+
+    <rect x="290" y="68" width="65" height="20" rx="4" fill="#ffffff" />
+    <text x="322" y="82" font-family="sans-serif" font-size="9.5" font-weight="bold" fill="#1e293b" text-anchor="middle">Login</text>
+  </g>
+
+  <!-- Latest Posts Grid Header -->
+  <text x="22" y="218" font-family="sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">📝 Latest Posts</text>
+
+  <!-- Post Card 1 (Real post from live site: "python" by Rafi) -->
+  <g transform="translate(20, 230)">
+    <rect width="175" height="135" rx="10" fill="url(#dbCardGrad)" stroke="#334155" />
+    <rect x="8" y="8" width="159" height="38" rx="6" fill="#1e1b4b" />
+    <text x="87" y="32" font-size="18" text-anchor="middle">📄</text>
+    
+    <!-- Meta: Avatar 'R' and Rafi -->
+    <circle cx="20" cy="58" r="8" fill="url(#dbHeroGrad)" />
+    <text x="20" y="62" font-family="sans-serif" font-size="9" font-weight="bold" fill="#ffffff" text-anchor="middle">R</text>
+    <text x="32" y="62" font-family="sans-serif" font-size="10" font-weight="bold" fill="#60a5fa">Rafi</text>
+    <text x="75" y="62" font-family="sans-serif" font-size="8.5" fill="#64748b">· Sep 15</text>
+
+    <!-- Title -->
+    <text x="12" y="80" font-family="sans-serif" font-size="12" font-weight="bold" fill="#ffffff">python</text>
+    <text x="12" y="94" font-family="sans-serif" font-size="9" fill="#94a3b8">Django &amp; Python article</text>
+
+    <!-- Stats: Likes & Comments -->
+    <text x="12" y="118" font-family="sans-serif" font-size="9.5" fill="#f472b6">❤️ 1</text>
+    <text x="44" y="118" font-family="sans-serif" font-size="9.5" fill="#60a5fa">💬 1</text>
+
+    <rect x="105" y="105" width="60" height="20" rx="4" fill="#334155" />
+    <text x="135" y="119" font-family="sans-serif" font-size="8.5" font-weight="bold" fill="#f8fafc" text-anchor="middle">Read →</text>
+  </g>
+
+  <!-- Post Card 2 (Real post: "My first project" by Rafi) -->
+  <g transform="translate(210, 230)">
+    <rect width="175" height="135" rx="10" fill="url(#dbCardGrad)" stroke="#334155" />
+    <rect x="8" y="8" width="159" height="38" rx="6" fill="#312e81" />
+    <text x="87" y="32" font-size="18" text-anchor="middle">📄</text>
+
+    <circle cx="20" cy="58" r="8" fill="url(#dbHeroGrad)" />
+    <text x="20" y="62" font-family="sans-serif" font-size="9" font-weight="bold" fill="#ffffff" text-anchor="middle">R</text>
+    <text x="32" y="62" font-family="sans-serif" font-size="10" font-weight="bold" fill="#60a5fa">Rafi</text>
+    <text x="75" y="62" font-family="sans-serif" font-size="8.5" fill="#64748b">· Sep 13</text>
+
+    <text x="12" y="80" font-family="sans-serif" font-size="12" font-weight="bold" fill="#ffffff">Project</text>
+    <text x="12" y="94" font-family="sans-serif" font-size="9" fill="#94a3b8">My first project showcase</text>
+
+    <text x="12" y="118" font-family="sans-serif" font-size="9.5" fill="#f472b6">❤️ 1</text>
+    <text x="44" y="118" font-family="sans-serif" font-size="9.5" fill="#60a5fa">💬 1</text>
+
+    <rect x="105" y="105" width="60" height="20" rx="4" fill="#334155" />
+    <text x="135" y="119" font-family="sans-serif" font-size="8.5" font-weight="bold" fill="#f8fafc" text-anchor="middle">Read →</text>
+  </g>
+
+  <!-- Post Card 3 (Real post: "Rafi") -->
+  <g transform="translate(400, 230)">
+    <rect width="180" height="135" rx="10" fill="url(#dbCardGrad)" stroke="#334155" />
+    <rect x="8" y="8" width="164" height="38" rx="6" fill="#1e1b4b" />
+    <text x="90" y="32" font-size="18" text-anchor="middle">📄</text>
+
+    <circle cx="20" cy="58" r="8" fill="url(#dbHeroGrad)" />
+    <text x="20" y="62" font-family="sans-serif" font-size="9" font-weight="bold" fill="#ffffff" text-anchor="middle">R</text>
+    <text x="32" y="62" font-family="sans-serif" font-size="10" font-weight="bold" fill="#60a5fa">Rafi</text>
+    <text x="75" y="62" font-family="sans-serif" font-size="8.5" fill="#64748b">· Sep 12</text>
+
+    <text x="12" y="80" font-family="sans-serif" font-size="12" font-weight="bold" fill="#ffffff">Rafi</text>
+    <text x="12" y="94" font-family="sans-serif" font-size="9" fill="#94a3b8">Personal thoughts &amp; intro</text>
+
+    <text x="12" y="118" font-family="sans-serif" font-size="9.5" fill="#f472b6">❤️ 1</text>
+    <text x="44" y="118" font-family="sans-serif" font-size="9.5" fill="#60a5fa">💬 2</text>
+
+    <rect x="110" y="105" width="60" height="20" rx="4" fill="#334155" />
+    <text x="140" y="119" font-family="sans-serif" font-size="8.5" font-weight="bold" fill="#f8fafc" text-anchor="middle">Read →</text>
+  </g>
+</svg>

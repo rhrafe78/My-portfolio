@@ -1,0 +1,1397 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Ridwoanul Haque Rafe | Full Stack Web Developer</title>
+  <meta name="title" content="Ridwoanul Haque Rafe | Full Stack Web Developer">
+  <meta name="description" content="Portfolio of Ridwoanul Haque Rafe - Full Stack Web Developer specializing in Python, Django, JavaScript, React.js, Tailwind CSS, and database architecture. Available for web development opportunities.">
+  <meta name="keywords" content="Ridwoanul Haque Rafe, Full Stack Developer, Web Developer, Django, Python, React.js, Tailwind CSS, JavaScript, PostgreSQL, Portfolio, Bangladesh">
+  <meta name="author" content="Ridwoanul Haque Rafe">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://github.com/rhrafe78">
+  <meta property="og:title" content="Ridwoanul Haque Rafe | Full Stack Web Developer">
+  <meta property="og:description" content="I build responsive, modern and user-friendly web applications using Python, Django, JavaScript, and modern frontend frameworks.">
+  <meta property="og:image" content="assets/images/hero-visual.svg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://github.com/rhrafe78">
+  <meta property="twitter:title" content="Ridwoanul Haque Rafe | Full Stack Web Developer">
+  <meta property="twitter:description" content="Portfolio of Ridwoanul Haque Rafe - Full Stack Web Developer. Available for internship, junior developer, and freelance roles.">
+  <meta property="twitter:image" content="assets/images/hero-visual.svg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <!-- Lightweight Resource Hints -->
+  <link rel="preconnect" href="https://api.github.com" crossorigin>
+  <link rel="dns-prefetch" href="https://api.github.com">
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
+  <link rel="dns-prefetch" href="https://unpkg.com">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#030712',
+              surface: '#0b0f19',
+              card: '#0f172a',
+              blue: '#3b82f6',
+              cyan: '#06b6d4',
+              purple: '#8b5cf6',
+              violet: '#6366f1',
+              emerald: '#10b981'
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Devicon Official Tech Brand Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+  <!-- Custom CSS with Aurora Glows & Spotlight Effects -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-[#030712] text-slate-100 antialiased selection:bg-cyan-500 selection:text-white bg-grid-pattern">
+
+  <!-- Top Multi-Stop Scroll Progress Indicator -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Ambient Cursor Spotlight Follower Glow -->
+  <div id="cursor-ambient-glow" class="pointer-events-none fixed -translate-x-1/2 -translate-y-1/2 w-[26rem] h-[26rem] rounded-full bg-gradient-to-tr from-cyan-500/15 via-indigo-600/15 to-purple-600/10 blur-[100px] z-0 hidden md:block opacity-0 transition-opacity duration-700" aria-hidden="true"></div>
+
+  <!-- Interactive Toast Notification Feedback -->
+  <div id="toast-notification" role="status" aria-live="polite" class="fixed bottom-6 right-6 z-50 max-w-sm glass-badge bg-slate-900/95 border border-cyan-500/40 text-slate-200 px-5 py-3.5 rounded-xl shadow-2xl flex items-center gap-3">
+    <div class="p-1.5 rounded-lg bg-cyan-500/20 text-cyan-400">
+      <i data-lucide="sparkles" class="w-4 h-4"></i>
+    </div>
+    <p id="toast-message" class="text-sm font-medium">Notification message</p>
+  </div>
+
+  <!-- ========================================================================
+       NAVIGATION BAR
+       ======================================================================== -->
+  <header>
+    <nav id="main-nav" class="fixed top-0 left-0 right-0 z-40 glass-nav transition-all duration-300 py-5 px-4 sm:px-6 lg:px-8" aria-label="Main Navigation">
+      <div class="max-w-7xl mx-auto flex items-center justify-between">
+        
+        <!-- Glowing Brand Logo with Avatar -->
+        <a href="#home" class="group flex items-center gap-3 focus-visible:ring-2 focus-visible:ring-cyan-400 rounded-lg p-1" aria-label="Ridwoanul Haque Rafe Home">
+          <div class="relative w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-400 via-indigo-500 to-purple-600 p-[1.5px] shadow-lg shadow-cyan-500/20 group-hover:shadow-indigo-500/40 transition-all duration-300 group-hover:scale-105">
+            <div class="w-full h-full bg-slate-950 rounded-[9px] overflow-hidden">
+              <img src="assets/images/profile.jpg" alt="Ridwoanul Haque Rafe" class="w-full h-full object-cover object-top" loading="eager" decoding="async">
+            </div>
+            <span class="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-500 border-2 border-slate-950 rounded-full" title="Active"></span>
+          </div>
+          <div class="flex flex-col">
+            <span class="font-bold text-base tracking-tight text-white group-hover:text-cyan-400 transition-colors">Ridwoanul <span class="text-cyan-400">Rafe</span></span>
+            <span class="text-[10px] uppercase tracking-widest text-slate-400 font-mono-code">Full-Stack Dev</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links (Responsive tablet & desktop) -->
+        <div class="hidden md:flex items-center gap-0.5 lg:gap-1.5 xl:gap-2">
+          <a href="#home" class="desktop-nav-link nav-link px-2.5 lg:px-3.5 py-1.5 lg:py-2 text-xs lg:text-sm font-medium text-slate-300 hover:text-white rounded-lg transition-colors">Home</a>
+          <a href="#about" class="desktop-nav-link nav-link px-2.5 lg:px-3.5 py-1.5 lg:py-2 text-xs lg:text-sm font-medium text-slate-300 hover:text-white rounded-lg transition-colors">About</a>
+          <a href="#skills" class="desktop-nav-link nav-link px-2.5 lg:px-3.5 py-1.5 lg:py-2 text-xs lg:text-sm font-medium text-slate-300 hover:text-white rounded-lg transition-colors">Skills</a>
+          <a href="#projects" class="desktop-nav-link nav-link px-2.5 lg:px-3.5 py-1.5 lg:py-2 text-xs lg:text-sm font-medium text-slate-300 hover:text-white rounded-lg transition-colors">Projects</a>
+          <a href="#github-activity" class="desktop-nav-link nav-link px-2.5 lg:px-3.5 py-1.5 lg:py-2 text-xs lg:text-sm font-medium text-slate-300 hover:text-white rounded-lg transition-colors">GitHub</a>
+          <a href="#contact" class="desktop-nav-link nav-link px-2.5 lg:px-3.5 py-1.5 lg:py-2 text-xs lg:text-sm font-medium text-slate-300 hover:text-white rounded-lg transition-colors">Contact</a>
+        </div>
+
+        <!-- Right Side Nav Actions -->
+        <div class="hidden md:flex items-center gap-2 lg:gap-3">
+          <button id="theme-toggle-btn" class="theme-toggle-btn" type="button" aria-label="Toggle dark/light theme" title="Toggle theme">
+            <i data-lucide="moon" class="w-4 h-4 moon-icon"></i>
+            <i data-lucide="sun" class="w-4 h-4 sun-icon text-amber-500"></i>
+          </button>
+          <a href="assets/cv/Ridwoanul_Haque_Rafe_CV.pdf" download="Ridwoanul_Haque_Rafe_CV.pdf" class="cv-download-btn btn-glow inline-flex items-center gap-1.5 lg:gap-2 px-3 lg:px-4 py-1.5 lg:py-2 rounded-xl text-xs font-semibold bg-slate-800/90 hover:bg-slate-700 text-slate-200 border border-slate-700 hover:border-indigo-500/50 transition-all hover:scale-[1.02] shadow-sm" aria-label="Download Resume as PDF">
+            <i data-lucide="download" class="w-3.5 h-3.5 text-indigo-400"></i>
+            <span>Resume</span>
+          </a>
+          <a href="#contact" class="btn-djangoblog inline-flex items-center gap-1.5 lg:gap-2 px-3 lg:px-4 py-1.5 lg:py-2 rounded-xl text-xs font-semibold text-white shadow-lg transition-all hover:scale-[1.02]">
+            <span>Hire Me</span>
+            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+
+        <!-- Mobile Right Controls (Quick Theme Button + Hamburger Menu) -->
+        <div class="flex md:hidden items-center gap-1.5 sm:gap-2">
+          <button id="mobile-quick-theme-btn" class="theme-toggle-btn" type="button" aria-label="Toggle dark/light theme" title="Toggle theme">
+            <i data-lucide="moon" class="w-4 h-4 moon-icon"></i>
+            <i data-lucide="sun" class="w-4 h-4 sun-icon text-amber-500"></i>
+          </button>
+          <button id="mobile-menu-btn" type="button" class="p-2 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 transition-colors" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+            <i id="menu-icon" data-lucide="menu" class="w-6 h-6"></i>
+            <i id="close-icon" data-lucide="x" class="w-6 h-6 hidden"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown Menu with Landscape Scroll Containment -->
+      <div id="mobile-menu" class="md:hidden hidden pt-4 pb-3 border-t border-slate-800/80 mt-3 max-h-[calc(100vh-5rem)] overflow-y-auto overscroll-contain animate-in fade-in slide-in-from-top-4 duration-200">
+        <div class="flex flex-col space-y-1.5 px-2">
+          <a href="#home" class="mobile-nav-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-800/60 hover:text-white transition-colors">
+            <i data-lucide="home" class="w-4 h-4 text-cyan-400"></i>
+            Home
+          </a>
+          <a href="#about" class="mobile-nav-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-800/60 hover:text-white transition-colors">
+            <i data-lucide="user" class="w-4 h-4 text-cyan-400"></i>
+            About
+          </a>
+          <a href="#skills" class="mobile-nav-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-800/60 hover:text-white transition-colors">
+            <i data-lucide="cpu" class="w-4 h-4 text-cyan-400"></i>
+            Skills
+          </a>
+          <a href="#projects" class="mobile-nav-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-800/60 hover:text-white transition-colors">
+            <i data-lucide="folder-git-2" class="w-4 h-4 text-cyan-400"></i>
+            Projects
+          </a>
+          <a href="#github-activity" class="mobile-nav-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-800/60 hover:text-white transition-colors">
+            <svg class="w-4 h-4 text-cyan-400 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            GitHub Activity
+          </a>
+          <a href="#contact" class="mobile-nav-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-800/60 hover:text-white transition-colors">
+            <i data-lucide="mail" class="w-4 h-4 text-cyan-400"></i>
+            Contact
+          </a>
+
+          <div class="pt-3 border-t border-slate-800/60 flex flex-col gap-2">
+            <button id="mobile-theme-toggle-btn" type="button" class="w-full py-2.5 px-4 rounded-xl text-xs font-semibold bg-slate-800/90 text-slate-200 border border-slate-700 flex items-center justify-center gap-2 transition-colors">
+              <i data-lucide="moon" class="w-4 h-4 text-cyan-400 moon-icon"></i>
+              <i data-lucide="sun" class="w-4 h-4 text-amber-400 sun-icon"></i>
+              <span id="mobile-theme-text">Toggle Light / Dark Mode</span>
+            </button>
+            <a href="assets/cv/Ridwoanul_Haque_Rafe_CV.pdf" download="Ridwoanul_Haque_Rafe_CV.pdf" class="cv-download-btn w-full py-2.5 px-4 rounded-xl text-center text-xs font-semibold bg-slate-800 text-slate-200 border border-slate-700 flex items-center justify-center gap-2">
+              <i data-lucide="download" class="w-4 h-4 text-cyan-400"></i>
+              Download Resume (PDF)
+            </a>
+            <a href="#contact" class="mobile-nav-link w-full py-2.5 px-4 rounded-xl text-center text-xs font-semibold bg-gradient-to-r from-cyan-500 to-indigo-600 text-white flex items-center justify-center gap-2">
+              <i data-lucide="send" class="w-4 h-4"></i>
+              Contact Directly
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ======================================================================
+         HERO SECTION WITH COSMIC AURORA & DYNAMIC TYPING
+         ====================================================================== -->
+    <section id="home" class="relative min-h-screen pt-32 pb-20 md:pt-40 md:pb-28 flex items-center overflow-hidden" aria-labelledby="hero-title">
+      
+      <!-- Shifting Cosmic Aurora Glows -->
+      <div class="absolute top-1/4 -left-32 w-[34rem] h-[34rem] bg-cyan-600/20 rounded-full blur-[110px] pointer-events-none -z-10 aurora-blob-1" aria-hidden="true"></div>
+      <div class="absolute bottom-1/4 -right-32 w-[34rem] h-[34rem] bg-purple-600/20 rounded-full blur-[110px] pointer-events-none -z-10 aurora-blob-2" aria-hidden="true"></div>
+      <div class="absolute top-1/2 left-1/3 w-[26rem] h-[26rem] bg-indigo-600/15 rounded-full blur-[90px] pointer-events-none -z-10 aurora-blob-3" aria-hidden="true"></div>
+      
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
+          <!-- Hero Text & CTAs (Left 7 Cols) -->
+          <div class="lg:col-span-7 flex flex-col items-start reveal-init">
+            
+            <!-- Pulsing Availability Badge -->
+            <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-900/90 border border-indigo-500/40 text-slate-300 text-xs font-medium mb-6 shadow-inner pulse-ring">
+              <span class="relative flex h-2.5 w-2.5">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+              </span>
+              <span class="text-indigo-300 font-medium">Available for Developer Roles &amp; Attachment</span>
+            </div>
+
+            <!-- Main Heading with Glowing Shimmer -->
+            <h1 id="hero-title" class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.12] mb-4">
+              Hi, I'm <br class="hidden sm:inline">
+              <span class="text-shimmer">Ridwoanul Haque Rafe</span>
+            </h1>
+
+            <!-- Dynamic Animated Typing Title -->
+            <h2 class="text-xl sm:text-2xl font-semibold text-slate-300 mb-6 flex items-center flex-wrap gap-2 min-h-[36px]">
+              <span class="text-indigo-400 font-mono-code font-bold">&gt;</span>
+              <span id="typing-role" class="text-slate-100 font-semibold"></span>
+              <span class="typing-cursor" aria-hidden="true"></span>
+            </h2>
+
+            <!-- Short Description -->
+            <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mb-8">
+              I build responsive, modern, and user-friendly web applications using <strong class="text-indigo-300 font-medium">Python, Django</strong>, and <strong class="text-sky-300 font-medium">JavaScript/React</strong>, while continuously improving my software engineering and problem-solving abilities.
+            </p>
+
+            <!-- 3 Hero Action Buttons with DjangoBlog Theme Glow -->
+            <div class="flex flex-wrap items-center gap-4 mb-10 w-full sm:w-auto">
+              <a href="#projects" class="btn-djangoblog w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl font-semibold text-sm text-white hover:-translate-y-0.5 transition-all">
+                <span>Explore Featured Projects</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+
+              <a href="assets/cv/Ridwoanul_Haque_Rafe_CV.pdf" download="Ridwoanul_Haque_Rafe_CV.pdf" class="cv-download-btn btn-glow w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl font-semibold text-sm bg-slate-900/90 hover:bg-slate-800 text-slate-200 border border-indigo-500/40 hover:border-indigo-400 hover:-translate-y-0.5 transition-all shadow-md">
+                <i data-lucide="download" class="w-4 h-4 text-indigo-400"></i>
+                <span>Download CV</span>
+              </a>
+
+              <a href="#contact" class="btn-glow w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm bg-slate-800/60 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-700 hover:border-slate-600 transition-all">
+                <i data-lucide="mail" class="w-4 h-4 text-indigo-400"></i>
+                <span>Contact Me</span>
+              </a>
+            </div>
+
+            <!-- Verified Social Links -->
+            <div class="flex flex-wrap items-center gap-4 text-slate-400 text-sm">
+              <span class="text-xs uppercase tracking-wider text-slate-400 font-mono-code">Connect:</span>
+              <div class="flex items-center gap-3">
+                <a href="https://github.com/rhrafe78" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-slate-800 hover:border-indigo-500/50 text-slate-300 hover:text-indigo-400 transition-all hover:scale-110 shadow-sm" aria-label="GitHub Profile (rhrafe78)">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                  </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/ridwoanul-hoque-rafe-292941367/" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-slate-800 hover:border-indigo-500/50 text-slate-300 hover:text-indigo-400 transition-all hover:scale-110 shadow-sm" aria-label="LinkedIn Profile">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                  </svg>
+                </a>
+                <a href="mailto:rafe734422@gmail.com" class="p-2.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-slate-800 hover:border-cyan-500/50 text-slate-300 hover:text-cyan-400 transition-all hover:scale-110 shadow-sm" aria-label="Send Email to rafe734422@gmail.com">
+                  <i data-lucide="mail" class="w-4 h-4"></i>
+                </a>
+                <a href="tel:+8801793764677" class="p-2.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-slate-800 hover:border-cyan-500/50 text-slate-300 hover:text-cyan-400 transition-all hover:scale-110 shadow-sm" aria-label="Call +880 1793-764677">
+                  <i data-lucide="phone" class="w-4 h-4"></i>
+                </a>
+              </div>
+              <div class="h-4 w-px bg-slate-800 hidden sm:block"></div>
+              <span class="text-xs text-slate-400 flex items-center gap-1.5">
+                <i data-lucide="map-pin" class="w-3.5 h-3.5 text-rose-400"></i>
+                Jessore Sadar, Jessore, Bangladesh
+              </span>
+            </div>
+
+          </div>
+
+          <!-- Hero Portrait Card (Right 5 Cols - Responsive Phone, Tablet, Laptop, Desktop) -->
+          <div class="lg:col-span-5 relative flex flex-col justify-center items-center reveal-init mt-8 lg:mt-0" style="animation-delay: 0.2s;">
+            <div class="relative w-full max-w-[340px] xs:max-w-[360px] sm:max-w-[400px] md:max-w-[440px] flex flex-col items-center mx-auto">
+              
+              <!-- Ambient Glowing Aurora Behind Portrait -->
+              <div class="absolute -inset-4 bg-gradient-to-tr from-cyan-500/30 via-indigo-600/40 to-purple-600/35 rounded-full blur-3xl opacity-85 -z-10 animate-pulse-glow" aria-hidden="true"></div>
+
+              <!-- Main Circular Portrait with Multi-layer Rotating Gradient Glowing Ring -->
+              <div class="avatar-rotating-ring relative p-[3px] sm:p-[4px] rounded-full aspect-square shrink-0 shadow-2xl shadow-indigo-500/40 transition-all duration-500 hover:shadow-cyan-500/50 hover:scale-[1.02] group" style="border-radius: 50%; aspect-ratio: 1 / 1;">
+                
+                <!-- Inner Dark Ring Wrapper -->
+                <div class="relative z-10 w-52 h-52 xs:w-60 xs:h-60 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full aspect-square overflow-hidden bg-slate-950 p-1" style="border-radius: 50%; aspect-ratio: 1 / 1;">
+                  
+                  <!-- Profile Photo in Circle -->
+                  <div class="relative w-full h-full rounded-full overflow-hidden" style="border-radius: 50%; aspect-ratio: 1 / 1;">
+                    <img 
+                      src="assets/images/profile.jpg" 
+                      alt="Ridwoanul Haque Rafe - Full Stack Web Developer" 
+                      class="w-full h-full object-cover object-[center_22%] rounded-full transition-transform duration-700 ease-out group-hover:scale-110" 
+                      style="border-radius: 50%; width: 100%; height: 100%; object-fit: cover; object-position: center 22%;"
+                      loading="eager"
+                      decoding="async"
+                      id="hero-profile-image"
+                    >
+
+                    <!-- Subtle bottom dark vignette for contrast -->
+                    <div class="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-slate-950/80 to-transparent pointer-events-none" style="border-bottom-left-radius: 9999px; border-bottom-right-radius: 9999px;"></div>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- Identity Glass Pill (Positioned cleanly below the circular frame) -->
+              <div id="hero-identity-pill" class="relative mt-3 sm:mt-4 z-30 px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full bg-slate-950/90 backdrop-blur-md border border-cyan-500/30 shadow-2xl shadow-cyan-500/20 flex items-center justify-center gap-2 sm:gap-3 transition-transform duration-300 hover:scale-105 w-auto max-w-[calc(100vw-2rem)]">
+                <div class="flex items-center gap-1.5 shrink-0">
+                  <span class="text-xs sm:text-sm font-bold text-white tracking-tight whitespace-nowrap">Ridwoanul Haque Rafe</span>
+                  <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-cyan-400 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-label="Verified Developer">
+                    <path fill-rule="evenodd" d="M8.603 3.799A4.49 4.49 0 0112 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 013.498 1.307 4.491 4.491 0 011.307 3.497A4.49 4.49 0 0121.75 12a4.49 4.49 0 01-1.549 3.397 4.491 4.491 0 01-1.307 3.497 4.491 4.491 0 01-3.497 1.307A4.49 4.49 0 0112 21.75a4.49 4.49 0 01-3.397-1.549 4.49 4.49 0 01-3.498-1.306 4.491 4.491 0 01-1.307-3.498A4.49 4.49 0 012.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 011.307-3.497 4.49 4.49 0 013.497-1.307zm7.007 6.387a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+                <div class="h-3.5 w-px bg-slate-700/80 shrink-0"></div>
+                <div class="flex items-center gap-1.5 px-2 sm:px-2.5 py-0.5 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-[10px] sm:text-[11px] font-semibold shrink-0 whitespace-nowrap">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                  <span>Open to Work</span>
+                </div>
+              </div>
+
+              <!-- Floating Live Tech Badge (Moved higher up on left side) -->
+              <div class="absolute top-14 sm:top-24 -left-1 sm:-left-8 glass-badge p-2 sm:p-3 rounded-xl shadow-xl flex items-center gap-2 sm:gap-3 animate-float-delayed border border-cyan-500/40 z-20 backdrop-blur-md">
+                <div class="w-7 h-7 sm:w-9 sm:h-9 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-mono-code font-bold text-xs sm:text-sm shrink-0">
+                  &lt;/&gt;
+                </div>
+                <div>
+                  <div class="text-[10px] sm:text-xs font-bold text-slate-200">Python &amp; Django + React</div>
+                  <div class="text-[9px] sm:text-[11px] text-slate-400">Full Stack Architecture</div>
+                </div>
+              </div>
+
+              <!-- Floating Active Status Badge (Top-Right) -->
+              <div id="hero-deploy-badge" class="absolute -top-3 -right-1 sm:-top-2 sm:-right-4 glass-badge p-1.5 sm:p-2.5 px-2.5 sm:px-3.5 rounded-xl shadow-xl flex items-center gap-1.5 sm:gap-2 animate-float border border-purple-500/40 z-20 backdrop-blur-md">
+                <div class="w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-emerald-400 animate-pulse shrink-0"></div>
+                <div class="text-[9px] sm:text-[11px] font-mono-code text-purple-200 font-semibold whitespace-nowrap">Ready to Build &amp; Deploy</div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Subtle Animated Scroll Down Indicator -->
+        <div class="mt-12 flex justify-center w-full">
+          <a href="#about" class="inline-flex flex-col items-center gap-1.5 text-slate-400 hover:text-cyan-400 transition-colors group animate-bounce" aria-label="Scroll to About section">
+            <span class="text-[11px] font-mono-code tracking-wider uppercase text-slate-500 group-hover:text-cyan-400">Scroll Down</span>
+            <i data-lucide="chevron-down" class="w-4 h-4 text-cyan-400"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         ABOUT SECTION
+         ====================================================================== -->
+    <section id="about" class="py-24 relative border-t border-slate-900/80 bg-[#080d1a]" aria-labelledby="about-title">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16 reveal-init">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-semibold mb-3">
+            <i data-lucide="user-check" class="w-3.5 h-3.5"></i>
+            <span>Engineering Mindset &amp; Passion</span>
+          </div>
+          <h2 id="about-title" class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            About <span class="text-shimmer">Me</span>
+          </h2>
+          <p class="mt-3 text-slate-400 text-base leading-relaxed">
+            Passionate about building clean, accessible, and database-driven web applications.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <!-- About Narrative (Left 7 Cols) -->
+          <div class="lg:col-span-7 space-y-5 text-slate-300 text-base leading-relaxed reveal-init">
+            <p>
+              I am <strong class="text-white font-semibold">Ridwoanul Haque Rafe</strong>, an enthusiastic <strong class="text-cyan-400 font-semibold">Full Stack Web Developer</strong> based in Bangladesh with a deep passion for web technologies and software engineering.
+            </p>
+            <p>
+              I specialize in crafting robust backend architectures with <span class="text-emerald-300 font-medium">Python &amp; Django (MTV pattern, CRUD, Auth)</span> coupled with intuitive, modern frontends using <span class="text-cyan-300 font-medium">HTML5, CSS3, Tailwind CSS, and JavaScript/React.js</span>. I design normalized relational database systems using <span class="text-purple-300 font-medium">PostgreSQL, MySQL, and SQLite</span>.
+            </p>
+            <p>
+              Beyond solo development, I have served as an <strong class="text-white font-semibold">HTML &amp; CSS Mentor (Volunteer)</strong>, guiding junior peers through responsive web pages, hands-on mini projects, and technical communication. I am looking for an internship, industrial attachment, or entry-level web development role where I can contribute fresh energy and grow within a collaborative team.
+            </p>
+
+            <!-- Key Principles -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-3">
+              <div class="p-3.5 rounded-xl bg-slate-900/70 border border-slate-800/80 flex items-start gap-3">
+                <i data-lucide="check-circle-2" class="w-5 h-5 text-cyan-400 shrink-0 mt-0.5"></i>
+                <span class="text-sm text-slate-300"><strong class="text-white">Full Stack Architecture:</strong> Django backends connected to modern client interfaces.</span>
+              </div>
+              <div class="p-3.5 rounded-xl bg-slate-900/70 border border-slate-800/80 flex items-start gap-3">
+                <i data-lucide="check-circle-2" class="w-5 h-5 text-cyan-400 shrink-0 mt-0.5"></i>
+                <span class="text-sm text-slate-300"><strong class="text-white">Database Design:</strong> Normalized relational schemas in PostgreSQL &amp; SQLite.</span>
+              </div>
+              <div class="p-3.5 rounded-xl bg-slate-900/70 border border-slate-800/80 flex items-start gap-3">
+                <i data-lucide="check-circle-2" class="w-5 h-5 text-cyan-400 shrink-0 mt-0.5"></i>
+                <span class="text-sm text-slate-300"><strong class="text-white">Git Versioning:</strong> Daily GitHub workflow hygiene and organized branches.</span>
+              </div>
+              <div class="p-3.5 rounded-xl bg-slate-900/70 border border-slate-800/80 flex items-start gap-3">
+                <i data-lucide="check-circle-2" class="w-5 h-5 text-cyan-400 shrink-0 mt-0.5"></i>
+                <span class="text-sm text-slate-300"><strong class="text-white">Mentoring Experience:</strong> Proven ability to guide peers in HTML &amp; CSS.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Developer Metrics Cards with Spotlight (Right 5 Cols) -->
+          <div class="lg:col-span-5 grid grid-cols-2 gap-4 reveal-init" style="animation-delay: 0.15s;">
+            
+            <!-- Card 1: Real Projects -->
+            <div class="glass-card p-6 rounded-2xl flex flex-col items-center text-center group">
+              <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <i data-lucide="folder-code" class="w-6 h-6"></i>
+              </div>
+              <div class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-1 flex items-center justify-center">
+                <span class="counter-number" data-target="4">0</span>
+                <span class="text-cyan-400">+</span>
+              </div>
+              <span class="text-xs uppercase tracking-wider text-cyan-400 font-semibold">Full-Stack Apps</span>
+              <span class="text-[11px] text-slate-400 mt-1">Django, SQLite &amp; Postgres</span>
+            </div>
+
+            <!-- Card 2: Live Deployments -->
+            <div class="glass-card p-6 rounded-2xl flex flex-col items-center text-center group">
+              <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <i data-lucide="globe" class="w-3.5 h-3.5 text-indigo-400 w-6 h-6"></i>
+              </div>
+              <div class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-1 flex items-center justify-center">
+                <span class="counter-number" data-target="2">0</span>
+                <span class="text-indigo-400">+</span>
+              </div>
+              <span class="text-xs uppercase tracking-wider text-indigo-400 font-semibold">Live on Vercel</span>
+              <span class="text-[11px] text-slate-400 mt-1">DjangoBlog &amp; Quiz System</span>
+            </div>
+
+            <!-- Card 3: Experience -->
+            <div class="glass-card p-6 rounded-2xl flex flex-col items-center text-center group">
+              <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <i data-lucide="briefcase" class="w-6 h-6"></i>
+              </div>
+              <div class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-1 flex items-center justify-center">
+                <span class="counter-number" data-target="3">0</span>
+                <span class="text-emerald-400">+</span>
+              </div>
+              <span class="text-xs uppercase tracking-wider text-emerald-400 font-semibold">Years Experience</span>
+              <span class="text-[11px] text-slate-400 mt-1">Web &amp; Software Dev</span>
+            </div>
+
+            <!-- Card 4: Daily Learning -->
+            <div class="glass-card p-6 rounded-2xl flex flex-col items-center text-center group">
+              <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/30 text-purple-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <i data-lucide="zap" class="w-6 h-6"></i>
+              </div>
+              <div class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-1 flex items-center justify-center">
+                <span class="counter-number" data-target="24">0</span>
+                <span class="text-purple-400">/7</span>
+              </div>
+              <span class="text-xs uppercase tracking-wider text-purple-400 font-semibold">Daily Dedication</span>
+              <span class="text-[11px] text-slate-400 mt-1">Active GitHub Codebase</span>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SKILLS & TECH STACK (Authentic Devicon Showcase matching real portfolios)
+         ====================================================================== -->
+    <section id="skills" class="py-16 sm:py-24 relative border-t border-slate-900/80 bg-[#030712]" aria-labelledby="skills-title">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header -->
+        <div class="text-center max-w-3xl mx-auto mb-10 reveal-init">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-semibold mb-3">
+            <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
+            <span>Skills &amp; Technologies</span>
+          </div>
+          <h2 id="skills-title" class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            My <span class="text-shimmer">Tech Stack</span>
+          </h2>
+          <p class="mt-2 text-slate-400 text-xs sm:text-sm leading-relaxed">
+            Technologies I work with to build modern, scalable web applications.
+          </p>
+        </div>
+
+        <!-- Dynamic Category Filter Tabs -->
+        <div class="flex flex-wrap items-center justify-center gap-2 mb-12 reveal-init" role="tablist" aria-label="Skill Category Filters">
+          <button type="button" class="skill-filter-btn btn-djangoblog px-4 py-1.5 rounded-xl text-xs font-semibold transition-all duration-200 text-white shadow-md scale-105" data-skill-filter="all" role="tab" aria-selected="true">
+            All Technologies (18)
+          </button>
+          <button type="button" class="skill-filter-btn px-4 py-1.5 rounded-xl text-xs font-semibold transition-all duration-200 bg-slate-800/60 text-slate-400 hover:text-slate-200" data-skill-filter="backend" role="tab" aria-selected="false">
+            Backend
+          </button>
+          <button type="button" class="skill-filter-btn px-4 py-1.5 rounded-xl text-xs font-semibold transition-all duration-200 bg-slate-800/60 text-slate-400 hover:text-slate-200" data-skill-filter="frontend" role="tab" aria-selected="false">
+            Frontend
+          </button>
+          <button type="button" class="skill-filter-btn px-4 py-1.5 rounded-xl text-xs font-semibold transition-all duration-200 bg-slate-800/60 text-slate-400 hover:text-slate-200" data-skill-filter="database" role="tab" aria-selected="false">
+            Database
+          </button>
+          <button type="button" class="skill-filter-btn px-4 py-1.5 rounded-xl text-xs font-semibold transition-all duration-200 bg-slate-800/60 text-slate-400 hover:text-slate-200" data-skill-filter="tools" role="tab" aria-selected="false">
+            Tools &amp; Workflow
+          </button>
+        </div>
+
+        <!-- Skills Categories Container -->
+        <div id="skills-catalog" class="space-y-12">
+
+          <!-- 1. Backend -->
+          <div class="skill-group-section reveal-init" data-skill-category="backend">
+            <div class="skills-cat-title">Backend</div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3.5 sm:gap-4">
+              
+              <div class="skill-card">
+                <i class="devicon-python-plain colored skill-icon"></i>
+                <span class="skill-name">Python</span>
+              </div>
+
+              <div class="skill-card">
+                <i class="devicon-django-plain colored skill-icon"></i>
+                <span class="skill-name">Django</span>
+              </div>
+
+              <div class="skill-card">
+                <span class="rest-icon-custom">REST</span>
+                <span class="skill-name">Django REST</span>
+              </div>
+
+              <div class="skill-card">
+                <span class="rest-icon-custom">API</span>
+                <span class="skill-name">REST API</span>
+              </div>
+
+              <div class="skill-card">
+                <span class="json-icon-custom">{}</span>
+                <span class="skill-name">JSON</span>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 2. Frontend -->
+          <div class="skill-group-section reveal-init" data-skill-category="frontend">
+            <div class="skills-cat-title">Frontend</div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3.5 sm:gap-4">
+              
+              <div class="skill-card">
+                <i class="devicon-html5-plain colored skill-icon"></i>
+                <span class="skill-name">HTML5</span>
+              </div>
+
+              <div class="skill-card">
+                <i class="devicon-css3-plain colored skill-icon"></i>
+                <span class="skill-name">CSS3</span>
+              </div>
+
+              <div class="skill-card">
+                <i class="devicon-javascript-plain colored skill-icon"></i>
+                <span class="skill-name">JavaScript</span>
+              </div>
+
+              <div class="skill-card">
+                <i class="devicon-react-original colored skill-icon"></i>
+                <span class="skill-name">React.js</span>
+              </div>
+
+              <div class="skill-card">
+                <i class="devicon-tailwindcss-plain colored skill-icon"></i>
+                <span class="skill-name">Tailwind CSS</span>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 3. Database -->
+          <div class="skill-group-section reveal-init" data-skill-category="database">
+            <div class="skills-cat-title">Database</div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3.5 sm:gap-4">
+              
+              <div class="skill-card">
+                <i class="devicon-postgresql-plain colored skill-icon"></i>
+                <span class="skill-name">PostgreSQL</span>
+              </div>
+
+              <div class="skill-card">
+                <i class="devicon-mysql-plain colored skill-icon"></i>
+                <span class="skill-name">MySQL</span>
+              </div>
+
+              <div class="skill-card">
+                <i class="devicon-sqlite-plain colored skill-icon"></i>
+                <span class="skill-name">SQLite</span>
+              </div>
+
+              <div class="skill-card">
+                <i data-lucide="database" class="skill-icon text-purple-400 w-9 h-9"></i>
+                <span class="skill-name">Django ORM</span>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 4. Tools & Workflow -->
+          <div class="skill-group-section reveal-init" data-skill-category="tools">
+            <div class="skills-cat-title">Tools &amp; Workflow</div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3.5 sm:gap-4">
+              
+              <div class="skill-card">
+                <i class="devicon-git-plain colored skill-icon"></i>
+                <span class="skill-name">Git</span>
+              </div>
+
+              <div class="skill-card">
+                <svg class="skill-icon text-white fill-current w-9 h-9" viewBox="0 0 24 24">
+                  <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                </svg>
+                <span class="skill-name">GitHub</span>
+              </div>
+
+              <div class="skill-card">
+                <i class="devicon-vscode-plain colored skill-icon"></i>
+                <span class="skill-name">VS Code</span>
+              </div>
+
+              <div class="skill-card">
+                <i class="devicon-postman-plain colored skill-icon"></i>
+                <span class="skill-name">Postman</span>
+              </div>
+
+              <div class="skill-card">
+                <svg class="skill-icon text-white fill-current w-8 h-8" viewBox="0 0 24 24">
+                  <path d="M12 2L2 19.7778H22L12 2Z"/>
+                </svg>
+                <span class="skill-name">Vercel</span>
+              </div>
+
+              <div class="skill-card">
+                <i data-lucide="cloud" class="skill-icon text-emerald-400 w-8 h-8"></i>
+                <span class="skill-name">Render</span>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         FEATURED PROJECTS SHOWCASE (Compact Modern Card Grid)
+         ====================================================================== -->
+    <section id="projects" class="py-16 sm:py-20 relative border-t border-slate-900/80 bg-[#080d1a]" aria-labelledby="projects-title">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header -->
+        <div class="text-center max-w-2xl mx-auto mb-8 reveal-init">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-semibold mb-2.5">
+            <i data-lucide="folder-git-2" class="w-3.5 h-3.5"></i>
+            <span>Curated Portfolio</span>
+          </div>
+          <h2 id="projects-title" class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            Featured <span class="text-shimmer">Projects</span>
+          </h2>
+          <p class="mt-2 text-slate-400 text-xs sm:text-sm leading-relaxed">
+            Full-stack web applications and modern interfaces engineered with clean architectures.
+          </p>
+        </div>
+
+        <!-- Dynamic Category Filters (Streamlined) -->
+        <div class="flex flex-wrap items-center justify-center gap-2 mb-8 reveal-init" role="tablist" aria-label="Project Category Filters">
+          <button type="button" class="filter-btn btn-djangoblog px-4 py-1.5 rounded-xl text-xs font-semibold transition-all duration-200 text-white shadow-md scale-105" data-filter="all" role="tab" aria-selected="true">
+            All Projects (4)
+          </button>
+          <button type="button" class="filter-btn px-4 py-1.5 rounded-xl text-xs font-semibold transition-all duration-200 bg-slate-800/60 text-slate-400 hover:text-slate-200" data-filter="fullstack" role="tab" aria-selected="false">
+            Full Stack (Django)
+          </button>
+          <button type="button" class="filter-btn px-4 py-1.5 rounded-xl text-xs font-semibold transition-all duration-200 bg-slate-800/60 text-slate-400 hover:text-slate-200" data-filter="frontend" role="tab" aria-selected="false">
+            Frontend UI
+          </button>
+        </div>
+
+        <!-- Compact Responsive Grid (2 Columns on Tablet/Desktop, Max-width contained) -->
+        <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+          
+          <!-- Project 1: DjangoBlog -->
+          <article class="project-card glass-card rounded-2xl overflow-hidden flex flex-col justify-between border-indigo-500/30 hover:border-indigo-500/60 transition-all duration-300 group" data-category="fullstack">
+            <div>
+              <div class="relative overflow-hidden bg-slate-950 h-44 sm:h-48 border-b border-indigo-500/20">
+                <img src="assets/images/project-djangoblog.svg" alt="DjangoBlog preview" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60"></div>
+                <div class="absolute top-2.5 left-2.5 flex items-center gap-1.5">
+                  <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-indigo-500/30 text-indigo-200 border border-indigo-500/50 backdrop-blur-md flex items-center gap-1">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                    Full Stack (Live)
+                  </span>
+                </div>
+                <div class="absolute top-2.5 right-2.5">
+                  <a href="https://blogdb-phi.vercel.app/" target="_blank" rel="noopener noreferrer" class="px-2 py-0.5 rounded-full text-[10px] font-mono-code bg-slate-900/85 hover:bg-slate-900 text-indigo-300 hover:text-white border border-indigo-500/40 backdrop-blur-md transition-colors inline-flex items-center gap-1">
+                    <span>blogdb-phi.vercel.app</span>
+                    <i data-lucide="external-link" class="w-3 h-3"></i>
+                  </a>
+                </div>
+              </div>
+
+              <div class="p-4 sm:p-5">
+                <div class="flex items-center gap-1.5 text-[11px] font-mono-code text-indigo-400 mb-1">
+                  <i data-lucide="sparkles" class="w-3 h-3"></i>
+                  <span>Live Deployed Web App</span>
+                </div>
+                <h3 class="text-base sm:text-lg font-bold text-white mb-1.5 group-hover:text-indigo-300 transition-colors line-clamp-1">
+                  DjangoBlog — Publishing Platform
+                </h3>
+                <p class="text-xs text-slate-400 leading-relaxed mb-3.5 line-clamp-2">
+                  Live blogging web application on Vercel with user authentication, post creation, likes, comments, author profiles, and responsive reading UX.
+                </p>
+
+                <div class="flex flex-wrap gap-1.5 mb-1.5">
+                  <span class="px-2 py-0.5 rounded bg-indigo-950/60 text-indigo-300 text-[10px] font-mono-code border border-indigo-500/30">Django</span>
+                  <span class="px-2 py-0.5 rounded bg-slate-800/80 text-emerald-300 text-[10px] font-mono-code border border-slate-700/60">Python</span>
+                  <span class="px-2 py-0.5 rounded bg-slate-800/80 text-cyan-300 text-[10px] font-mono-code border border-slate-700/60">Vercel</span>
+                  <span class="px-2 py-0.5 rounded bg-slate-800/80 text-purple-300 text-[10px] font-mono-code border border-slate-700/60">SQLite</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="px-4 sm:px-5 py-3 border-t border-slate-800/60 flex items-center justify-between gap-2">
+              <button type="button" class="view-project-btn inline-flex items-center gap-1.5 py-1.5 px-3 rounded-lg text-xs font-semibold bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-700 hover:from-indigo-500 hover:to-purple-500 text-white shadow-sm transition-all hover:scale-105" data-project-id="djangoblog-live">
+                <i data-lucide="info" class="w-3.5 h-3.5"></i>
+                <span>Details</span>
+              </button>
+              <div class="flex items-center gap-2">
+                <a href="https://blogdb-phi.vercel.app/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 py-1.5 px-2.5 rounded-lg text-xs font-medium bg-indigo-500/15 hover:bg-indigo-500/25 text-indigo-300 hover:text-white border border-indigo-500/40 transition-colors">
+                  <i data-lucide="globe" class="w-3.5 h-3.5 text-indigo-400"></i>
+                  <span>Live</span>
+                </a>
+                <a href="https://github.com/rhrafe78" target="_blank" rel="noopener noreferrer" class="p-1.5 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 transition-colors" title="View Source on GitHub">
+                  <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: Student Management System with Quiz Module -->
+          <article class="project-card glass-card rounded-2xl overflow-hidden flex flex-col justify-between border-cyan-500/30 hover:border-cyan-500/60 transition-all duration-300 group" data-category="fullstack">
+            <div>
+              <div class="relative overflow-hidden bg-slate-950 h-44 sm:h-48 border-b border-slate-800/80">
+                <img src="assets/images/project-student-quiz.svg" alt="Quiz Module preview" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60"></div>
+                <div class="absolute top-2.5 left-2.5 flex items-center gap-1.5">
+                  <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-cyan-500/25 text-cyan-200 border border-cyan-500/45 backdrop-blur-md flex items-center gap-1">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                    Full Stack (Live)
+                  </span>
+                </div>
+                <div class="absolute top-2.5 right-2.5">
+                  <a href="https://liquidtripler.vercel.app/register/" target="_blank" rel="noopener noreferrer" class="px-2 py-0.5 rounded-full text-[10px] font-mono-code bg-slate-900/85 hover:bg-slate-900 text-cyan-300 hover:text-white border border-cyan-500/40 backdrop-blur-md transition-colors inline-flex items-center gap-1">
+                    <span>liquidtripler.vercel.app</span>
+                    <i data-lucide="external-link" class="w-3 h-3"></i>
+                  </a>
+                </div>
+              </div>
+
+              <div class="p-4 sm:p-5">
+                <div class="flex items-center gap-1.5 text-[11px] font-mono-code text-cyan-400 mb-1">
+                  <i data-lucide="sparkles" class="w-3 h-3"></i>
+                  <span>Live Deployed Web App</span>
+                </div>
+                <h3 class="text-base sm:text-lg font-bold text-white mb-1.5 group-hover:text-cyan-300 transition-colors line-clamp-1">
+                  Student Management &amp; Quiz Engine
+                </h3>
+                <p class="text-xs text-slate-400 leading-relaxed mb-3.5 line-clamp-2">
+                  Academic evaluation system deployed on Vercel with countdown timers, auto-scoring, student authentication, and CRUD student record management.
+                </p>
+
+                <div class="flex flex-wrap gap-1.5 mb-1.5">
+                  <span class="px-2 py-0.5 rounded bg-slate-800/80 text-cyan-300 text-[10px] font-mono-code border border-slate-700/60">Django</span>
+                  <span class="px-2 py-0.5 rounded bg-slate-800/80 text-emerald-300 text-[10px] font-mono-code border border-slate-700/60">Python</span>
+                  <span class="px-2 py-0.5 rounded bg-slate-800/80 text-indigo-300 text-[10px] font-mono-code border border-slate-700/60">Vercel</span>
+                  <span class="px-2 py-0.5 rounded bg-slate-800/80 text-yellow-300 text-[10px] font-mono-code border border-slate-700/60">JS (Timer)</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="px-4 sm:px-5 py-3 border-t border-slate-800/60 flex items-center justify-between gap-2">
+              <button type="button" class="view-project-btn inline-flex items-center gap-1.5 py-1.5 px-3 rounded-lg text-xs font-semibold bg-cyan-600 hover:bg-cyan-500 text-white shadow-sm transition-all hover:scale-105" data-project-id="student-quiz-system">
+                <i data-lucide="info" class="w-3.5 h-3.5"></i>
+                <span>Details</span>
+              </button>
+              <div class="flex items-center gap-2">
+                <a href="https://liquidtripler.vercel.app/register/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 py-1.5 px-2.5 rounded-lg text-xs font-medium bg-cyan-500/15 hover:bg-cyan-500/25 text-cyan-300 hover:text-white border border-cyan-500/40 transition-colors">
+                  <i data-lucide="globe" class="w-3.5 h-3.5 text-cyan-400"></i>
+                  <span>Live</span>
+                </a>
+                <a href="https://github.com/rhrafe78" target="_blank" rel="noopener noreferrer" class="p-1.5 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 transition-colors" title="View Source on GitHub">
+                  <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: Content Management System -->
+          <article class="project-card glass-card rounded-2xl overflow-hidden flex flex-col justify-between border-emerald-500/30 hover:border-emerald-500/60 transition-all duration-300 group" data-category="fullstack">
+            <div>
+              <div class="relative overflow-hidden bg-slate-950 h-44 sm:h-48 border-b border-slate-800/80">
+                <img src="assets/images/project-cms.svg" alt="CMS admin preview" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60"></div>
+                <div class="absolute top-2.5 left-2.5">
+                  <span class="px-2.5 py-0.5 rounded-full text-[10px] font-medium bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 backdrop-blur-md">
+                    Full Stack (Django)
+                  </span>
+                </div>
+                <div class="absolute top-2.5 right-2.5">
+                  <span class="px-2 py-0.5 rounded-full text-[10px] font-mono-code bg-slate-900/85 text-emerald-300 border border-emerald-500/40 backdrop-blur-md inline-flex items-center gap-1">
+                    <i data-lucide="database" class="w-3 h-3"></i>
+                    <span>Django ORM</span>
+                  </span>
+                </div>
+              </div>
+
+              <div class="p-4 sm:p-5">
+                <div class="flex items-center gap-1.5 text-[11px] font-mono-code text-emerald-400 mb-1">
+                  <i data-lucide="shield-check" class="w-3 h-3"></i>
+                  <span>Admin Moderation Panel</span>
+                </div>
+                <h3 class="text-base sm:text-lg font-bold text-white mb-1.5 group-hover:text-emerald-300 transition-colors line-clamp-1">
+                  Content Management System (CMS)
+                </h3>
+                <p class="text-xs text-slate-400 leading-relaxed mb-3.5 line-clamp-2">
+                  Dynamic web platform with user authentication, custom admin moderation, category taxonomies, and scheduled content publishing workflows.
+                </p>
+
+                <div class="flex flex-wrap gap-1.5 mb-1.5">
+                  <span class="px-2 py-0.5 rounded bg-slate-800/80 text-emerald-300 text-[10px] font-mono-code border border-slate-700/60">Django</span>
+                  <span class="px-2 py-0.5 rounded bg-slate-800/80 text-emerald-300 text-[10px] font-mono-code border border-slate-700/60">Python</span>
+                  <span class="px-2 py-0.5 rounded bg-slate-800/80 text-cyan-300 text-[10px] font-mono-code border border-slate-700/60">HTML/CSS</span>
+                  <span class="px-2 py-0.5 rounded bg-slate-800/80 text-purple-300 text-[10px] font-mono-code border border-slate-700/60">SQLite</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="px-4 sm:px-5 py-3 border-t border-slate-800/60 flex items-center justify-between gap-2">
+              <button type="button" class="view-project-btn inline-flex items-center gap-1.5 py-1.5 px-3 rounded-lg text-xs font-semibold bg-emerald-600 hover:bg-emerald-500 text-white shadow-sm transition-all hover:scale-105" data-project-id="content-management-system">
+                <i data-lucide="info" class="w-3.5 h-3.5"></i>
+                <span>Details</span>
+              </button>
+              <div class="flex items-center gap-2">
+                <a href="https://github.com/rhrafe78" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 py-1.5 px-2.5 rounded-lg text-xs font-medium bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-300 hover:text-white border border-emerald-500/40 transition-colors">
+                  <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                  <span>GitHub</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4: Foodie Hub Delivery UI -->
+          <article class="project-card glass-card rounded-2xl overflow-hidden flex flex-col justify-between border-amber-500/30 hover:border-amber-500/60 transition-all duration-300 group" data-category="frontend">
+            <div>
+              <div class="relative overflow-hidden bg-slate-950 h-44 sm:h-48 border-b border-slate-800/80">
+                <img src="assets/images/project-foodie.svg" alt="Foodie Hub ordering preview" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60"></div>
+                <div class="absolute top-2.5 left-2.5">
+                  <span class="px-2.5 py-0.5 rounded-full text-[10px] font-medium bg-amber-500/20 text-amber-300 border border-amber-500/40 backdrop-blur-md">
+                    Frontend UI
+                  </span>
+                </div>
+                <div class="absolute top-2.5 right-2.5">
+                  <span class="px-2 py-0.5 rounded-full text-[10px] font-mono-code bg-slate-900/85 text-amber-300 border border-amber-500/40 backdrop-blur-md inline-flex items-center gap-1">
+                    <i data-lucide="sparkles" class="w-3 h-3"></i>
+                    <span>Interactive UI</span>
+                  </span>
+                </div>
+              </div>
+
+              <div class="p-4 sm:p-5">
+                <div class="flex items-center gap-1.5 text-[11px] font-mono-code text-amber-400 mb-1">
+                  <i data-lucide="layout" class="w-3 h-3"></i>
+                  <span>Tactile Interface</span>
+                </div>
+                <h3 class="text-base sm:text-lg font-bold text-white mb-1.5 group-hover:text-amber-300 transition-colors line-clamp-1">
+                  Foodie Hub Delivery UI
+                </h3>
+                <p class="text-xs text-slate-400 leading-relaxed mb-3.5 line-clamp-2">
+                  Interactive food ordering interface featuring dynamic menu filters, live cart drawer calculations, responsive order states, and tactile UX.
+                </p>
+
+                <div class="flex flex-wrap gap-1.5 mb-1.5">
+                  <span class="px-2 py-0.5 rounded bg-slate-800/80 text-sky-300 text-[10px] font-mono-code border border-slate-700/60">HTML5</span>
+                  <span class="px-2 py-0.5 rounded bg-slate-800/80 text-cyan-300 text-[10px] font-mono-code border border-slate-700/60">Tailwind</span>
+                  <span class="px-2 py-0.5 rounded bg-slate-800/80 text-yellow-300 text-[10px] font-mono-code border border-slate-700/60">JavaScript</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="px-4 sm:px-5 py-3 border-t border-slate-800/60 flex items-center justify-between gap-2">
+              <button type="button" class="view-project-btn inline-flex items-center gap-1.5 py-1.5 px-3 rounded-lg text-xs font-semibold bg-amber-600 hover:bg-amber-500 text-white shadow-sm transition-all hover:scale-105" data-project-id="foodie-hub">
+                <i data-lucide="info" class="w-3.5 h-3.5"></i>
+                <span>Details</span>
+              </button>
+              <div class="flex items-center gap-2">
+                <a href="https://github.com/rhrafe78" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 py-1.5 px-2.5 rounded-lg text-xs font-medium bg-amber-500/15 hover:bg-amber-500/25 text-amber-300 hover:text-white border border-amber-500/40 transition-colors">
+                  <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                  <span>GitHub</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         PROJECT DETAILS MODAL DIALOG
+         ====================================================================== -->
+    <div id="project-modal" class="fixed inset-0 z-50 modal-closed flex items-center justify-center p-4 sm:p-6" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div id="modal-backdrop" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md"></div>
+
+      <div id="modal-content" class="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto glass-card bg-slate-900/95 border border-indigo-500/40 rounded-2xl shadow-2xl p-6 sm:p-8 z-10">
+        
+        <div class="flex items-start justify-between gap-4 pb-4 border-b border-slate-800">
+          <div>
+            <div class="flex items-center gap-3 mb-1">
+              <h3 id="modal-title" class="text-2xl font-bold text-white tracking-tight">Project Title</h3>
+              <span id="modal-category" class="px-2.5 py-0.5 rounded-full text-xs font-medium">Category</span>
+            </div>
+            <p id="modal-subtitle" class="text-xs sm:text-sm text-slate-400">Project subtitle</p>
+          </div>
+          <button id="modal-close-btn" type="button" class="p-2 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400" aria-label="Close modal dialog">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+
+        <div class="my-6 rounded-xl overflow-hidden border border-slate-800 bg-slate-950 aspect-[16/9]">
+          <img id="modal-image" src="assets/images/project-djangoblog.svg" alt="Project Preview" class="w-full h-full object-cover" loading="lazy" decoding="async">
+        </div>
+
+        <div class="mb-6">
+          <h4 class="text-xs uppercase tracking-wider text-indigo-400 font-semibold mb-2">Project Overview</h4>
+          <p id="modal-description" class="text-sm text-slate-300 leading-relaxed"></p>
+        </div>
+
+        <div class="mb-6">
+          <h4 class="text-xs uppercase tracking-wider text-indigo-400 font-semibold mb-2.5">Key Features &amp; Implementation</h4>
+          <ul id="modal-features" class="space-y-2"></ul>
+        </div>
+
+        <div class="mb-6">
+          <h4 class="text-xs uppercase tracking-wider text-indigo-400 font-semibold mb-2.5">Technologies &amp; Architecture</h4>
+          <div id="modal-tech" class="flex flex-wrap gap-2"></div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+          <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800/80">
+            <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-amber-400 mb-1.5">
+              <i data-lucide="alert-circle" class="w-4 h-4"></i>
+              <span>Engineering Challenge</span>
+            </div>
+            <p id="modal-challenges" class="text-xs text-slate-300 leading-relaxed"></p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800/80">
+            <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-emerald-400 mb-1.5">
+              <i data-lucide="check-circle" class="w-4 h-4"></i>
+              <span>Solution &amp; Outcome</span>
+            </div>
+            <p id="modal-solutions" class="text-xs text-slate-300 leading-relaxed"></p>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-slate-800">
+          <div class="text-[11px] text-slate-400 flex items-center gap-1.5">
+            <i data-lucide="info" class="w-3.5 h-3.5 text-indigo-400"></i>
+            <span>Maintained on GitHub: rhrafe78</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <a id="modal-repo-link" href="https://github.com/rhrafe78" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-colors">
+              <svg class="w-4 h-4 text-slate-300" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              <span>GitHub Repository</span>
+            </a>
+            <a id="modal-demo-link" href="https://blogdb-phi.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-djangoblog inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold text-white shadow-lg transition-all hover:scale-105">
+              <span>Open Project</span>
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+    <!-- ======================================================================
+         LIVE GITHUB ACTIVITY & REPOSITORIES SHOWCASE
+         ====================================================================== -->
+    <section id="github-activity" class="py-24 relative border-t border-slate-900/80 bg-[#030712]" aria-labelledby="github-title">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-14 reveal-init">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-semibold mb-3">
+            <svg class="w-3.5 h-3.5 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            <span>Verified Open Source &amp; Code Telemetry</span>
+          </div>
+          <h2 id="github-title" class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            GitHub <span class="text-shimmer">Activity &amp; Code</span>
+          </h2>
+          <p class="mt-3 text-slate-400 text-base leading-relaxed">
+            Live telemetry and public repositories fetched directly from GitHub API for <strong class="text-slate-200">@rhrafe78</strong>.
+          </p>
+        </div>
+
+        <!-- GitHub Profile Overview Header Card -->
+        <div class="glass-card rounded-2xl p-6 sm:p-8 mb-10 border border-slate-800/80 relative overflow-hidden reveal-init">
+          <div class="absolute -right-16 -top-16 w-56 h-56 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+          
+          <div class="flex flex-col lg:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-4 sm:gap-5 w-full lg:w-auto">
+              <div class="relative w-16 h-16 sm:w-20 sm:h-20 rounded-2xl p-0.5 bg-gradient-to-tr from-cyan-400 via-indigo-500 to-purple-600 shadow-xl flex-shrink-0">
+                <img id="gh-avatar" src="https://avatars.githubusercontent.com/u/100411880?v=4" alt="Ridwoanul Haque Rafe" class="w-full h-full object-cover rounded-[14px]">
+                <span class="absolute -bottom-1 -right-1 w-4 h-4 bg-emerald-500 border-2 border-slate-900 rounded-full"></span>
+              </div>
+              <div>
+                <div class="flex flex-wrap items-center gap-2.5">
+                  <h3 class="text-xl sm:text-2xl font-bold text-white">Ridwoanul Haque Rafe</h3>
+                  <a href="https://github.com/rhrafe78" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md text-xs font-mono-code bg-slate-800 text-cyan-400 border border-slate-700 hover:border-cyan-500 transition-colors">
+                    <span>@rhrafe78</span>
+                    <i data-lucide="external-link" class="w-3 h-3"></i>
+                  </a>
+                </div>
+                <p class="text-slate-400 text-xs sm:text-sm mt-1 flex items-center gap-2">
+                  <i data-lucide="map-pin" class="w-3.5 h-3.5 text-cyan-400"></i>
+                  <span>Jessore Sadar, Jessore, Bangladesh</span>
+                </p>
+                <p class="text-slate-300 text-xs sm:text-sm mt-1.5 font-medium">
+                  Full Stack Web Developer specializing in Python, Django, React.js &amp; PostgreSQL.
+                </p>
+              </div>
+            </div>
+
+            <!-- Profile Summary Badges -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 w-full lg:w-auto">
+              <div class="glass-card bg-slate-900/60 rounded-xl p-3 text-center border border-slate-800">
+                <div id="gh-public-repos" class="text-2xl font-black text-cyan-400 font-mono-code">11</div>
+                <div class="text-[11px] text-slate-400 uppercase tracking-wider mt-0.5">Repositories</div>
+              </div>
+              <div class="glass-card bg-slate-900/60 rounded-xl p-3 text-center border border-slate-800">
+                <div class="text-2xl font-black text-indigo-400 font-mono-code">Python</div>
+                <div class="text-[11px] text-slate-400 uppercase tracking-wider mt-0.5">Core Stack</div>
+              </div>
+              <div class="glass-card bg-slate-900/60 rounded-xl p-3 text-center border border-slate-800">
+                <div class="text-2xl font-black text-purple-400 font-mono-code">Django</div>
+                <div class="text-[11px] text-slate-400 uppercase tracking-wider mt-0.5">Backend</div>
+              </div>
+              <div class="glass-card bg-slate-900/60 rounded-xl p-3 text-center border border-slate-800">
+                <div class="text-2xl font-black text-emerald-400 font-mono-code">Active</div>
+                <div class="text-[11px] text-slate-400 uppercase tracking-wider mt-0.5">Status</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dynamic Repositories Grid Container -->
+        <div id="github-repos-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Fallback / Pre-hydrated Real Repos from User Profile -->
+          <div class="glass-card github-card rounded-2xl p-6 border border-slate-800/80 flex flex-col justify-between hover:border-cyan-500/40 transition-all">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <div class="p-2 rounded-lg bg-cyan-500/10 text-cyan-400">
+                  <i data-lucide="book-marked" class="w-5 h-5"></i>
+                </div>
+                <span class="text-xs px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">Public</span>
+              </div>
+              <h4 class="text-lg font-bold text-white mb-2">Hospital_Management_System</h4>
+              <p class="text-slate-400 text-sm line-clamp-2 leading-relaxed">Enterprise clinical appointment and patient management system built with Django and REST APIs.</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-800/60 flex items-center justify-between text-xs text-slate-400">
+              <span class="flex items-center gap-1.5 font-medium"><span class="w-2.5 h-2.5 rounded-full bg-[#3572A5]"></span> Python</span>
+              <a href="https://github.com/rhrafe78/Hospital_Management_System" target="_blank" rel="noopener noreferrer" class="text-cyan-400 hover:text-white inline-flex items-center gap-1 transition-colors">
+                <span>View Repo</span>
+                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="glass-card github-card rounded-2xl p-6 border border-slate-800/80 flex flex-col justify-between hover:border-indigo-500/40 transition-all">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <div class="p-2 rounded-lg bg-indigo-500/10 text-indigo-400">
+                  <i data-lucide="book-marked" class="w-5 h-5"></i>
+                </div>
+                <span class="text-xs px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">Public</span>
+              </div>
+              <h4 class="text-lg font-bold text-white mb-2">Content_Management_System</h4>
+              <p class="text-slate-400 text-sm line-clamp-2 leading-relaxed">Role-based dynamic publishing CMS with editorial workflows, JWT authentication, and slug routing.</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-800/60 flex items-center justify-between text-xs text-slate-400">
+              <span class="flex items-center gap-1.5 font-medium"><span class="w-2.5 h-2.5 rounded-full bg-[#3572A5]"></span> Python</span>
+              <a href="https://github.com/rhrafe78/Content_Management_System" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:text-white inline-flex items-center gap-1 transition-colors">
+                <span>View Repo</span>
+                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="glass-card github-card rounded-2xl p-6 border border-slate-800/80 flex flex-col justify-between hover:border-purple-500/40 transition-all">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <div class="p-2 rounded-lg bg-purple-500/10 text-purple-400">
+                  <i data-lucide="book-marked" class="w-5 h-5"></i>
+                </div>
+                <span class="text-xs px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">Public</span>
+              </div>
+              <h4 class="text-lg font-bold text-white mb-2">Student_Management_Service</h4>
+              <p class="text-slate-400 text-sm line-clamp-2 leading-relaxed">Academic grading, course enrollment, and student records database backend with PostgreSQL.</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-800/60 flex items-center justify-between text-xs text-slate-400">
+              <span class="flex items-center gap-1.5 font-medium"><span class="w-2.5 h-2.5 rounded-full bg-[#3572A5]"></span> Python</span>
+              <a href="https://github.com/rhrafe78/Student_Management_Service" target="_blank" rel="noopener noreferrer" class="text-purple-400 hover:text-white inline-flex items-center gap-1 transition-colors">
+                <span>View Repo</span>
+                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Link to Full GitHub Profile -->
+        <div class="mt-12 text-center reveal-init">
+          <a href="https://github.com/rhrafe78?tab=repositories" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm bg-slate-800/90 hover:bg-slate-700 text-white border border-slate-700 hover:border-cyan-500/50 shadow-lg hover:scale-105 transition-all">
+            <svg class="w-4 h-4 text-cyan-400 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            <span>Browse All Repositories on GitHub (@rhrafe78)</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         CONTACT SECTION WITH REAL EMAIL & PHONE
+         ====================================================================== -->
+    <section id="contact" class="py-24 relative border-t border-slate-900/80 bg-[#030712]" aria-labelledby="contact-title">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16 reveal-init">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-semibold mb-3">
+            <i data-lucide="mail-check" class="w-3.5 h-3.5"></i>
+            <span>Get In Touch</span>
+          </div>
+          <h2 id="contact-title" class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            Let's <span class="text-shimmer">Connect</span>
+          </h2>
+          <p class="mt-3 text-slate-400 text-base leading-relaxed">
+            Reach out directly via email, phone, or send a message below for junior developer openings, internships, or collaborative projects.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          
+          <!-- Contact Cards (Left 5 Cols) -->
+          <div class="lg:col-span-5 space-y-5 reveal-init">
+            
+            <div class="glass-card p-6 rounded-2xl border border-slate-800/90">
+              <h3 class="text-xl font-bold text-white mb-2">Direct Contact Channels</h3>
+              <p class="text-xs text-slate-400 leading-relaxed mb-6">
+                Feel free to email me directly or connect via professional platforms. I typically respond within a few hours.
+              </p>
+
+              <div class="space-y-4">
+                
+                <!-- Email Item -->
+                <a href="mailto:rafe734422@gmail.com" class="flex items-center gap-4 p-3.5 rounded-xl bg-slate-900/70 hover:bg-slate-800/90 border border-slate-800 hover:border-cyan-500/40 transition-all group">
+                  <div class="p-2.5 rounded-lg bg-cyan-500/10 text-cyan-400 group-hover:scale-110 transition-transform">
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                  </div>
+                  <div class="flex-1 overflow-hidden">
+                    <div class="text-xs text-slate-400">Direct Email</div>
+                    <div class="text-sm font-semibold text-white group-hover:text-cyan-400 transition-colors truncate">rafe734422@gmail.com</div>
+                  </div>
+                  <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-white transition-colors"></i>
+                </a>
+
+                <!-- Phone Item -->
+                <a href="tel:+8801793764677" class="flex items-center gap-4 p-3.5 rounded-xl bg-slate-900/70 hover:bg-slate-800/90 border border-slate-800 hover:border-cyan-500/40 transition-all group">
+                  <div class="p-2.5 rounded-lg bg-emerald-500/10 text-emerald-400 group-hover:scale-110 transition-transform">
+                    <i data-lucide="phone" class="w-5 h-5"></i>
+                  </div>
+                  <div class="flex-1">
+                    <div class="text-xs text-slate-400">Phone / WhatsApp</div>
+                    <div class="text-sm font-semibold text-white group-hover:text-emerald-400 transition-colors">+880 1793-764677</div>
+                  </div>
+                  <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-white transition-colors"></i>
+                </a>
+
+                <!-- GitHub Item -->
+                <a href="https://github.com/rhrafe78" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-3.5 rounded-xl bg-slate-900/70 hover:bg-slate-800/90 border border-slate-800 hover:border-purple-500/40 transition-all group">
+                  <div class="p-2.5 rounded-lg bg-purple-500/10 text-purple-400 group-hover:scale-110 transition-transform">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                    </svg>
+                  </div>
+                  <div class="flex-1">
+                    <div class="text-xs text-slate-400">GitHub</div>
+                    <div class="text-sm font-semibold text-white group-hover:text-purple-400 transition-colors">github.com/rhrafe78</div>
+                  </div>
+                  <i data-lucide="external-link" class="w-4 h-4 text-slate-400 group-hover:text-white transition-colors"></i>
+                </a>
+
+                <!-- LinkedIn Item -->
+                <a href="https://www.linkedin.com/in/ridwoanul-hoque-rafe-292941367/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-3.5 rounded-xl bg-slate-900/70 hover:bg-slate-800/90 border border-slate-800 hover:border-blue-500/40 transition-all group">
+                  <div class="p-2.5 rounded-lg bg-blue-500/10 text-blue-400 group-hover:scale-110 transition-transform">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                    </svg>
+                  </div>
+                  <div class="flex-1">
+                    <div class="text-xs text-slate-400">LinkedIn</div>
+                    <div class="text-sm font-semibold text-white group-hover:text-blue-400 transition-colors">Ridwoanul Haque Rafe</div>
+                  </div>
+                  <i data-lucide="external-link" class="w-4 h-4 text-slate-400 group-hover:text-white transition-colors"></i>
+                </a>
+
+                <!-- Location Item -->
+                <div class="flex items-center gap-4 p-3.5 rounded-xl bg-slate-900/70 border border-slate-800">
+                  <div class="p-2.5 rounded-lg bg-rose-500/10 text-rose-400">
+                    <i data-lucide="map-pin" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <div class="text-xs text-slate-400">Location</div>
+                    <div class="text-sm font-semibold text-white">Jessore Sadar, Jessore, Bangladesh</div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Interactive Contact Form (Right 7 Cols) -->
+          <div class="lg:col-span-7 glass-card p-6 sm:p-8 rounded-2xl border border-slate-800/90 reveal-init" style="animation-delay: 0.15s;">
+            
+            <div class="mb-6">
+              <h3 class="text-xl font-bold text-white">Send Me a Message</h3>
+              <p class="text-xs text-slate-400 mt-1">Messages are validated and pre-formatted for direct delivery to <strong class="text-cyan-400">rafe734422@gmail.com</strong>.</p>
+            </div>
+
+            <div id="form-status" class="mb-6 hidden" role="alert" aria-live="polite"></div>
+
+            <form id="contact-form" novalidate class="space-y-5">
+              
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div>
+                  <label for="name" class="block text-xs font-semibold text-slate-300 mb-1.5">
+                    Your Full Name <span class="text-rose-400" aria-hidden="true">*</span>
+                  </label>
+                  <input type="text" id="name" name="name" required placeholder="e.g. John Doe" class="form-input w-full px-4 py-3 rounded-xl text-sm text-white placeholder:text-slate-500" aria-describedby="name-error">
+                  <p id="name-error" class="text-xs text-rose-400 mt-1.5 hidden"></p>
+                </div>
+
+                <div>
+                  <label for="email" class="block text-xs font-semibold text-slate-300 mb-1.5">
+                    Your Email Address <span class="text-rose-400" aria-hidden="true">*</span>
+                  </label>
+                  <input type="email" id="email" name="email" required placeholder="e.g. john@example.com" class="form-input w-full px-4 py-3 rounded-xl text-sm text-white placeholder:text-slate-500" aria-describedby="email-error">
+                  <p id="email-error" class="text-xs text-rose-400 mt-1.5 hidden"></p>
+                </div>
+              </div>
+
+              <div>
+                <label for="subject" class="block text-xs font-semibold text-slate-300 mb-1.5">
+                  Subject <span class="text-rose-400" aria-hidden="true">*</span>
+                </label>
+                <input type="text" id="subject" name="subject" required placeholder="e.g. Junior Full Stack Opportunity / Internship Interview" class="form-input w-full px-4 py-3 rounded-xl text-sm text-white placeholder:text-slate-500" aria-describedby="subject-error">
+                <p id="subject-error" class="text-xs text-rose-400 mt-1.5 hidden"></p>
+              </div>
+
+              <div>
+                <label for="message" class="block text-xs font-semibold text-slate-300 mb-1.5">
+                  Your Message <span class="text-rose-400" aria-hidden="true">*</span>
+                </label>
+                <textarea id="message" name="message" rows="5" required placeholder="Please describe your opportunity, company, or project in detail..." class="form-input w-full px-4 py-3 rounded-xl text-sm text-white placeholder:text-slate-500" aria-describedby="message-error"></textarea>
+                <div class="flex justify-between items-center mt-1.5">
+                  <p id="message-error" class="text-xs text-rose-400 hidden"></p>
+                  <span class="text-[11px] text-slate-400 ml-auto">Min. 15 characters</span>
+                </div>
+              </div>
+
+              <button type="submit" id="contact-submit-btn" class="btn-djangoblog w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl font-semibold text-sm text-white shadow-lg transition-all hover:scale-[1.01] active:scale-[0.99]">
+                <i data-lucide="send" class="w-4 h-4"></i>
+                <span>Send Message to Rafe</span>
+              </button>
+
+              <div class="pt-2 text-center">
+                <p class="text-[11px] text-slate-400">
+                  <i data-lucide="shield-check" class="w-3.5 h-3.5 inline text-emerald-400 mr-1"></i>
+                  Client validation active. Connect Formspree or EmailJS by updating the form action in <span class="text-cyan-400 font-mono-code">js/script.js</span>.
+                </p>
+              </div>
+
+            </form>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       FOOTER & BACK TO TOP
+       ======================================================================== -->
+  <footer class="border-t border-slate-900 bg-[#02050e] text-slate-400 py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center pb-8 border-b border-slate-800/80">
+        
+        <!-- Brand & Motto -->
+        <div class="md:col-span-5 space-y-2">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-400 via-indigo-500 to-purple-600 p-[1.5px] shadow-md">
+              <div class="w-full h-full bg-slate-950 rounded-[9px] overflow-hidden">
+                <img src="assets/images/profile.jpg" alt="Ridwoanul Haque Rafe" class="w-full h-full object-cover object-top" loading="lazy">
+              </div>
+            </div>
+            <span class="font-bold text-base text-white">Ridwoanul Haque Rafe</span>
+          </div>
+          <p class="text-xs text-slate-400 font-mono-code italic">
+            "Building today. Learning every day."
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="md:col-span-4 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-medium text-slate-400">
+          <a href="#home" class="hover:text-cyan-400 transition-colors">Home</a>
+          <a href="#about" class="hover:text-cyan-400 transition-colors">About</a>
+          <a href="#skills" class="hover:text-cyan-400 transition-colors">Skills</a>
+          <a href="#projects" class="hover:text-cyan-400 transition-colors">Projects</a>
+          <a href="#contact" class="hover:text-cyan-400 transition-colors">Contact</a>
+        </div>
+
+        <!-- Social Icons -->
+        <div class="md:col-span-3 flex items-center md:justify-end gap-3">
+          <a href="https://github.com/rhrafe78" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-white transition-colors" aria-label="GitHub">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/ridwoanul-hoque-rafe-292941367/" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-white transition-colors" aria-label="LinkedIn">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+            </svg>
+          </a>
+          <a href="mailto:rafe734422@gmail.com" class="p-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-white transition-colors" aria-label="Email">
+            <i data-lucide="mail" class="w-4 h-4"></i>
+          </a>
+          <a href="tel:+8801793764677" class="p-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-white transition-colors" aria-label="Phone">
+            <i data-lucide="phone" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Bottom Copyright -->
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+        <p>© 2026 Ridwoanul Haque Rafe. All rights reserved.</p>
+        <p class="font-mono-code text-cyan-400/80">Django • Python • React • Tailwind CSS</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button id="back-to-top" type="button" class="fixed bottom-6 left-6 z-40 p-3 rounded-xl glass-badge bg-slate-900/90 text-slate-300 hover:text-white hover:bg-slate-800 border border-slate-700/80 shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400" aria-label="Scroll back to top">
+    <i data-lucide="chevron-up" class="w-5 h-5 text-cyan-400"></i>
+  </button>
+
+  <!-- Toast Feedback Notification -->
+  <div id="toast-notification" class="fixed bottom-6 right-6 z-50 flex items-center gap-3 px-4 py-3 rounded-xl bg-slate-900/95 border border-indigo-500/40 text-white shadow-2xl backdrop-blur-md" role="status" aria-live="polite">
+    <div class="p-1.5 rounded-lg bg-indigo-500/20 text-indigo-400">
+      <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+    </div>
+    <span id="toast-message" class="text-xs font-medium text-slate-200"></span>
+  </div>
+
+  <!-- Modular Scripts -->
+  <script src="js/script.js" defer></script>
+</body>
+</html>

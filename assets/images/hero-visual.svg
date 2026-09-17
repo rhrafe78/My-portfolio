@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 560" fill="none">
+  <defs>
+    <linearGradient id="heroBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e1526" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#080c14" stop-opacity="0.98" />
+    </linearGradient>
+    <linearGradient id="termHeader" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="primaryGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.35" />
+      <stop offset="50%" stop-color="#8b5cf6" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#ec4899" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="codeCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#818cf8" />
+    </linearGradient>
+    <linearGradient id="borderGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.7" />
+      <stop offset="50%" stop-color="#8b5cf6" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#1e293b" stop-opacity="0.4" />
+    </linearGradient>
+    <filter id="glowFilter" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="24" result="blur" />
+    </filter>
+  </defs>
+
+  <!-- Ambient Glow Backdrops -->
+  <circle cx="420" cy="180" r="160" fill="#8b5cf6" opacity="0.18" filter="url(#glowFilter)" />
+  <circle cx="220" cy="340" r="140" fill="#3b82f6" opacity="0.2" filter="url(#glowFilter)" />
+
+  <!-- Background Decorative Grid Dots -->
+  <g opacity="0.15">
+    <pattern id="dotGrid" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.5" fill="#94a3b8" />
+    </pattern>
+    <rect width="680" height="560" fill="url(#dotGrid)" />
+  </g>
+
+  <!-- Main IDE / Code Window -->
+  <g transform="translate(50, 45)">
+    <!-- Window Shadow & Background -->
+    <rect width="520" height="360" rx="16" fill="url(#heroBgGrad)" stroke="url(#borderGlow)" stroke-width="1.5" />
+    
+    <!-- Window Header -->
+    <path d="M0 16 C0 7.16 7.16 0 16 0 L504 0 C512.84 0 520 7.16 520 16 L520 44 L0 44 Z" fill="url(#termHeader)" />
+    <circle cx="22" cy="22" r="6" fill="#ef4444" />
+    <circle cx="40" cy="22" r="6" fill="#f59e0b" />
+    <circle cx="58" cy="22" r="6" fill="#10b981" />
+    
+    <!-- Tab -->
+    <rect x="90" y="8" width="160" height="28" rx="6" fill="#1e293b" />
+    <text x="110" y="26" font-family="Consolas, monospace" font-size="12" fill="#94a3b8">developer.js</text>
+    <circle cx="232" cy="22" r="4" fill="#60a5fa" />
+
+    <!-- Line Numbers & Code Content -->
+    <g transform="translate(24, 66)" font-family="Consolas, 'Fira Code', monospace" font-size="13">
+      <!-- Line Numbers -->
+      <text x="0" y="20" fill="#475569">01</text>
+      <text x="0" y="46" fill="#475569">02</text>
+      <text x="0" y="72" fill="#475569">03</text>
+      <text x="0" y="98" fill="#475569">04</text>
+      <text x="0" y="124" fill="#475569">05</text>
+      <text x="0" y="150" fill="#475569">06</text>
+      <text x="0" y="176" fill="#475569">07</text>
+      <text x="0" y="202" fill="#475569">08</text>
+      <text x="0" y="228" fill="#475569">09</text>
+      <text x="0" y="254" fill="#475569">10</text>
+
+      <!-- Code Lines -->
+      <g transform="translate(36, 0)">
+        <text x="0" y="20"><tspan fill="#c084fc">const</tspan> <tspan fill="#93c5fd">developer</tspan> = {</text>
+        <text x="16" y="46"><tspan fill="#cbd5e1">name:</tspan> <tspan fill="#86efac">"Ridwoanul Haque Rafe"</tspan>,</text>
+        <text x="16" y="72"><tspan fill="#cbd5e1">role:</tspan> <tspan fill="#86efac">"Full-Stack Web Developer"</tspan>,</text>
+        <text x="16" y="98"><tspan fill="#cbd5e1">liveProject:</tspan> <tspan fill="#818cf8">"blogdb-phi.vercel.app"</tspan>,</text>
+        <text x="16" y="124"><tspan fill="#cbd5e1">frontend:</tspan> [<tspan fill="#38bdf8">"HTML5"</tspan>, <tspan fill="#38bdf8">"Tailwind"</tspan>, <tspan fill="#fde047">"JavaScript"</tspan>],</text>
+        <text x="16" y="150"><tspan fill="#cbd5e1">backend:</tspan> [<tspan fill="#34d399">"Python"</tspan>, <tspan fill="#818cf8">"Django"</tspan>, <tspan fill="#60a5fa">"PostgreSQL"</tspan>],</text>
+        <text x="16" y="176"><tspan fill="#cbd5e1">tools:</tspan> [<tspan fill="#ec4899">"Git"</tspan>, <tspan fill="#a855f7">"Vercel"</tspan>, <tspan fill="#60a5fa">"VS Code"</tspan>],</text>
+        <text x="16" y="202"><tspan fill="#cbd5e1">status:</tspan> <tspan fill="#34d399">"Ready to build &amp; deploy"</tspan></text>
+        <text x="0" y="228"><tspan fill="#cbd5e1">};</tspan></text>
+        <text x="0" y="254"><tspan fill="#3b82f6">console</tspan>.<tspan fill="#c084fc">log</tspan>(<tspan fill="#93c5fd">developer</tspan>.<tspan fill="#f472b6">status</tspan>); <tspan fill="#22c55e">// 🚀</tspan></text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Floating Feature Card 1: Performance / Quality Badge -->
+  <g transform="translate(440, 290)">
+    <rect width="200" height="84" rx="12" fill="#0f172a" fill-opacity="0.9" stroke="#38bdf8" stroke-width="1.5" />
+    <circle cx="36" cy="42" r="18" fill="#0369a1" fill-opacity="0.3" />
+    <path d="M36 32 L40 40 L49 41 L42 47 L44 56 L36 51 L28 56 L30 47 L23 41 L32 40 Z" fill="#38bdf8" />
+    <text x="66" y="36" font-family="'Segoe UI', system-ui, sans-serif" font-size="12" fill="#94a3b8">Code Quality</text>
+    <text x="66" y="58" font-family="'Segoe UI', system-ui, sans-serif" font-size="16" font-weight="700" fill="#f8fafc">Clean • Responsive</text>
+  </g>
+
+  <!-- Floating Feature Card 2: Tech Stack Pill -->
+  <g transform="translate(20, 360)">
+    <rect width="210" height="88" rx="12" fill="#0f172a" fill-opacity="0.92" stroke="#8b5cf6" stroke-width="1.5" />
+    <circle cx="36" cy="44" r="18" fill="#6d28d9" fill-opacity="0.3" />
+    <path d="M30 38 L24 44 L30 50 M42 38 L48 44 L42 50" stroke="#c084fc" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+    <text x="66" y="36" font-family="'Segoe UI', system-ui, sans-serif" font-size="11" fill="#94a3b8">Frontend &amp; Backend</text>
+    <text x="66" y="56" font-family="'Segoe UI', system-ui, sans-serif" font-size="14" font-weight="700" fill="#f8fafc">Tailwind • JS • Python</text>
+    <text x="66" y="72" font-family="'Segoe UI', system-ui, sans-serif" font-size="10" fill="#10b981">● Active Daily Coding</text>
+  </g>
+
+  <!-- Floating Mini Pill: Live Status -->
+  <g transform="translate(240, 445)">
+    <rect width="190" height="44" rx="22" fill="#1e1b4b" fill-opacity="0.9" stroke="#6366f1" stroke-width="1.2" />
+    <circle cx="24" cy="22" r="5" fill="#22c55e" />
+    <text x="38" y="27" font-family="'Segoe UI', system-ui, sans-serif" font-size="12" font-weight="600" fill="#e0e7ff">Ready for Junior Roles</text>
+  </g>
+</svg>

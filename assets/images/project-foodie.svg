@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" fill="none">
+  <defs>
+    <linearGradient id="fBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+    <linearGradient id="fOrange" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f97316" />
+      <stop offset="100%" stop-color="#fb923c" />
+    </linearGradient>
+    <linearGradient id="fCardBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.9" />
+    </linearGradient>
+  </defs>
+  <rect width="600" height="380" fill="url(#fBg)" />
+  <rect width="600" height="36" fill="#1e293b" />
+  <circle cx="20" cy="18" r="5" fill="#ef4444" />
+  <circle cx="36" cy="18" r="5" fill="#f59e0b" />
+  <circle cx="52" cy="18" r="5" fill="#10b981" />
+  <rect x="180" y="9" width="240" height="18" rx="9" fill="#0f172a" />
+  <text x="300" y="22" font-family="sans-serif" font-size="10" fill="#64748b" text-anchor="middle">foodie-hub-app.preview</text>
+
+  <rect x="24" y="54" width="552" height="44" rx="8" fill="#1e293b" fill-opacity="0.5" />
+  <text x="44" y="81" font-family="sans-serif" font-size="16" font-weight="bold" fill="url(#fOrange)">Foodie<tspan fill="#ffffff">Hub</tspan></text>
+  <rect x="160" y="64" width="60" height="24" rx="6" fill="#334155" />
+  <text x="190" y="79" font-family="sans-serif" font-size="10" fill="#f8fafc" text-anchor="middle">All Menu</text>
+  <rect x="230" y="64" width="60" height="24" rx="6" fill="#0f172a" />
+  <text x="260" y="79" font-family="sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">Burgers</text>
+  <rect x="300" y="64" width="60" height="24" rx="6" fill="#0f172a" />
+  <text x="330" y="79" font-family="sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">Pizza</text>
+  <rect x="480" y="62" width="80" height="28" rx="14" fill="url(#fOrange)" />
+  <text x="520" y="80" font-family="sans-serif" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">Cart (3)</text>
+
+  <g transform="translate(24, 116)">
+    <rect width="170" height="230" rx="12" fill="url(#fCardBg)" stroke="#334155" stroke-width="1" />
+    <rect x="12" y="12" width="146" height="95" rx="8" fill="#292524" />
+    <circle cx="85" cy="60" r="35" fill="#ea580c" fill-opacity="0.3" />
+    <text x="85" y="68" font-size="34" text-anchor="middle">🍔</text>
+    <text x="16" y="132" font-family="sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">Classic Burger</text>
+    <text x="16" y="148" font-family="sans-serif" font-size="10" fill="#94a3b8">Double patty &amp; melted cheese</text>
+    <text x="16" y="174" font-family="sans-serif" font-size="15" font-weight="bold" fill="#f97316">$8.99</text>
+    <rect x="16" y="190" width="138" height="28" rx="6" fill="#ea580c" />
+    <text x="85" y="208" font-family="sans-serif" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">+ Add to Cart</text>
+  </g>
+
+  <g transform="translate(214, 116)">
+    <rect width="170" height="230" rx="12" fill="url(#fCardBg)" stroke="#334155" stroke-width="1" />
+    <rect x="12" y="12" width="146" height="95" rx="8" fill="#1c1917" />
+    <circle cx="85" cy="60" r="35" fill="#ca8a04" fill-opacity="0.3" />
+    <text x="85" y="68" font-size="34" text-anchor="middle">🍕</text>
+    <text x="16" y="132" font-family="sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">Crispy Pizza</text>
+    <text x="16" y="148" font-family="sans-serif" font-size="10" fill="#94a3b8">Fresh herbs, basil, mozzarella</text>
+    <text x="16" y="174" font-family="sans-serif" font-size="15" font-weight="bold" fill="#f97316">$12.50</text>
+    <rect x="16" y="190" width="138" height="28" rx="6" fill="#ea580c" />
+    <text x="85" y="208" font-family="sans-serif" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">+ Add to Cart</text>
+  </g>
+
+  <g transform="translate(404, 116)">
+    <rect width="170" height="230" rx="12" fill="url(#fCardBg)" stroke="#334155" stroke-width="1" />
+    <rect x="12" y="12" width="146" height="95" rx="8" fill="#14532d" fill-opacity="0.3" />
+    <circle cx="85" cy="60" r="35" fill="#16a34a" fill-opacity="0.3" />
+    <text x="85" y="68" font-size="34" text-anchor="middle">🥗</text>
+    <text x="16" y="132" font-family="sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">Avocado Salad</text>
+    <text x="16" y="148" font-family="sans-serif" font-size="10" fill="#94a3b8">Organic garden vegetables</text>
+    <text x="16" y="174" font-family="sans-serif" font-size="15" font-weight="bold" fill="#f97316">$6.99</text>
+    <rect x="16" y="190" width="138" height="28" rx="6" fill="#ea580c" />
+    <text x="85" y="208" font-family="sans-serif" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">+ Add to Cart</text>
+  </g>
+</svg>

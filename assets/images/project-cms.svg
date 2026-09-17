@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" fill="none">
+  <defs>
+    <linearGradient id="cmsBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064e3b" />
+      <stop offset="100%" stop-color="#022c22" />
+    </linearGradient>
+    <linearGradient id="cmsEmerald" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#34d399" />
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="380" fill="#030712" />
+  <rect width="600" height="36" fill="#064e3b" fill-opacity="0.8" />
+  <circle cx="20" cy="18" r="5" fill="#ef4444" />
+  <circle cx="36" cy="18" r="5" fill="#f59e0b" />
+  <circle cx="52" cy="18" r="5" fill="#10b981" />
+  <text x="80" y="22" font-family="sans-serif" font-size="12" font-weight="bold" fill="#a7f3d0">Django Administration CMS</text>
+
+  <!-- Left Sidebar Navigation -->
+  <g transform="translate(20, 52)">
+    <rect width="140" height="308" rx="8" fill="#064e3b" fill-opacity="0.25" stroke="#059669" stroke-width="1" />
+    <text x="20" y="30" font-family="sans-serif" font-size="12" font-weight="bold" fill="#34d399">CMS Modules</text>
+    
+    <rect x="12" y="46" width="116" height="26" rx="4" fill="#10b981" fill-opacity="0.2" />
+    <text x="24" y="63" font-family="sans-serif" font-size="10" font-weight="600" fill="#6ee7b7">● Site Dashboard</text>
+    
+    <text x="24" y="94" font-family="sans-serif" font-size="10" fill="#9ca3af">● Content Items</text>
+    <text x="24" y="122" font-family="sans-serif" font-size="10" fill="#9ca3af">● Categories</text>
+    <text x="24" y="150" font-family="sans-serif" font-size="10" fill="#9ca3af">● Media Library</text>
+    <text x="24" y="178" font-family="sans-serif" font-size="10" fill="#9ca3af">● Auth &amp; Users</text>
+    <text x="24" y="206" font-family="sans-serif" font-size="10" fill="#9ca3af">● Permissions</text>
+    <text x="24" y="234" font-family="sans-serif" font-size="10" fill="#9ca3af">● DB Settings</text>
+  </g>
+
+  <!-- Dashboard View -->
+  <g transform="translate(175, 52)">
+    <rect width="405" height="70" rx="8" fill="#0f172a" stroke="#1e293b" />
+    
+    <!-- Metric 1 -->
+    <text x="20" y="28" font-family="sans-serif" font-size="10" fill="#94a3b8">Published Pages</text>
+    <text x="20" y="52" font-family="sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">42</text>
+    <text x="50" y="52" font-family="sans-serif" font-size="10" fill="#10b981">↑ Active</text>
+
+    <!-- Metric 2 -->
+    <text x="160" y="28" font-family="sans-serif" font-size="10" fill="#94a3b8">Database Queries</text>
+    <text x="160" y="52" font-family="sans-serif" font-size="20" font-weight="bold" fill="#38bdf8">0.04s</text>
+    <text x="215" y="52" font-family="sans-serif" font-size="10" fill="#38bdf8">Optimized</text>
+
+    <!-- Metric 3 -->
+    <text x="290" y="28" font-family="sans-serif" font-size="10" fill="#94a3b8">Admin Access</text>
+    <text x="290" y="52" font-family="sans-serif" font-size="14" font-weight="bold" fill="#34d399">Role-Based</text>
+
+    <!-- Table view -->
+    <rect x="0" y="85" width="405" height="223" rx="8" fill="#0f172a" stroke="#1e293b" />
+    <rect x="0" y="85" width="405" height="32" rx="8" fill="#1e293b" />
+    <text x="18" y="106" font-family="sans-serif" font-size="11" font-weight="bold" fill="#cbd5e1">Content Title</text>
+    <text x="200" y="106" font-family="sans-serif" font-size="11" font-weight="bold" fill="#cbd5e1">Architecture</text>
+    <text x="310" y="106" font-family="sans-serif" font-size="11" font-weight="bold" fill="#cbd5e1">Action</text>
+
+    <!-- Row 1 -->
+    <text x="18" y="138" font-family="sans-serif" font-size="10.5" fill="#f8fafc">Landing Hero &amp; Features</text>
+    <text x="200" y="138" font-family="sans-serif" font-size="10" fill="#34d399">Django Views</text>
+    <rect x="310" y="125" width="70" height="20" rx="4" fill="#059669" />
+    <text x="345" y="139" font-family="sans-serif" font-size="9" font-weight="bold" fill="#ffffff" text-anchor="middle">Edit Content</text>
+
+    <!-- Row 2 -->
+    <text x="18" y="174" font-family="sans-serif" font-size="10.5" fill="#f8fafc">Product Catalog Schema</text>
+    <text x="200" y="174" font-family="sans-serif" font-size="10" fill="#38bdf8">ORM Models</text>
+    <rect x="310" y="161" width="70" height="20" rx="4" fill="#059669" />
+    <text x="345" y="175" font-family="sans-serif" font-size="9" font-weight="bold" fill="#ffffff" text-anchor="middle">Edit Content</text>
+
+    <!-- Row 3 -->
+    <text x="18" y="210" font-family="sans-serif" font-size="10.5" fill="#f8fafc">User Authentication System</text>
+    <text x="200" y="210" font-family="sans-serif" font-size="10" fill="#a855f7">Auth Middleware</text>
+    <rect x="310" y="197" width="70" height="20" rx="4" fill="#059669" />
+    <text x="345" y="211" font-family="sans-serif" font-size="9" font-weight="bold" fill="#ffffff" text-anchor="middle">Manage Auth</text>
+
+    <!-- Row 4 -->
+    <text x="18" y="246" font-family="sans-serif" font-size="10.5" fill="#f8fafc">API Endpoints (JSON)</text>
+    <text x="200" y="246" font-family="sans-serif" font-size="10" fill="#38bdf8">REST Serialization</text>
+    <rect x="310" y="233" width="70" height="20" rx="4" fill="#0284c7" />
+    <text x="345" y="247" font-family="sans-serif" font-size="9" font-weight="bold" fill="#ffffff" text-anchor="middle">Test Route</text>
+
+    <!-- Row 5 -->
+    <text x="18" y="282" font-family="sans-serif" font-size="10.5" fill="#f8fafc">Database Backup &amp; SQLite Sync</text>
+    <text x="200" y="282" font-family="sans-serif" font-size="10" fill="#10b981">Automated</text>
+    <rect x="310" y="269" width="70" height="20" rx="4" fill="#334155" />
+    <text x="345" y="283" font-family="sans-serif" font-size="9" font-weight="bold" fill="#cbd5e1" text-anchor="middle">View Logs</text>
+  </g>
+</svg>
