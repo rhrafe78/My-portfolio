@@ -792,30 +792,102 @@ function initContactForm() {
       Sending to rafe734422@gmail.com...
     `;
 
-    setTimeout(() => {
+    fetch('https://formsubmit.co/ajax/rafe734422@gmail.com', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        name: nameVal,
+        email: emailVal,
+        subject: subjectVal,
+        message: messageVal,
+        _subject: `Portfolio Contact: ${subjectVal} (from ${nameVal})`,
+        _template: 'table',
+        _captcha: 'false'
+      })
+    })
+    .then(async (response) => {
+      let result = {};
+      try {
+        result = await response.json();
+      } catch (err) {}
+
       submitBtn.disabled = false;
       submitBtn.innerHTML = originalBtnHTML;
 
+      if (response.ok && (result.success === 'true' || result.success === true)) {
+        formStatus.innerHTML = `
+          <div class="p-4 rounded-xl bg-emerald-500/15 border border-emerald-500/40 text-emerald-200 flex items-start gap-3 shadow-lg shadow-emerald-500/10">
+            <svg class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <div>
+              <h5 class="font-semibold text-emerald-100">Message Delivered Successfully!</h5>
+              <p class="text-xs text-emerald-200/90 mt-1">Thank you, <span class="font-semibold text-white">${escapeHtml(nameVal)}</span>. Your message has been sent directly to <strong class="text-white">rafe734422@gmail.com</strong>. I will reply to you as soon as possible.</p>
+            </div>
+          </div>
+        `;
+        formStatus.classList.remove('hidden');
+        form.reset();
+        [nameInput, emailInput, subjectInput, messageInput].forEach(inp => {
+          inp.classList.remove('input-success');
+        });
+        showToast('Message sent to rafe734422@gmail.com!');
+      } else if (result.message && result.message.toLowerCase().includes('activation')) {
+        formStatus.innerHTML = `
+          <div class="p-4 rounded-xl bg-amber-500/15 border border-amber-500/40 text-amber-200 flex items-start gap-3 shadow-lg">
+            <svg class="w-5 h-5 text-amber-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+            </svg>
+            <div>
+              <h5 class="font-semibold text-amber-100">One-Time Activation Required</h5>
+              <p class="text-xs text-amber-200/90 mt-1">FormSubmit has sent a confirmation email to <strong>rafe734422@gmail.com</strong>. Please check your inbox and click <em>'Activate Form'</em> once to receive all future messages directly.</p>
+              <a href="mailto:rafe734422@gmail.com?subject=${encodeURIComponent(subjectVal)}&body=${encodeURIComponent('From: ' + nameVal + ' (' + emailVal + ')\n\n' + messageVal)}" class="mt-3 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-amber-600 hover:bg-amber-500 text-white transition-colors">
+                <span>Send via Gmail App Now</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </a>
+            </div>
+          </div>
+        `;
+        formStatus.classList.remove('hidden');
+      } else {
+        formStatus.innerHTML = `
+          <div class="p-4 rounded-xl bg-indigo-500/15 border border-indigo-500/40 text-indigo-200 flex items-start gap-3 shadow-lg">
+            <svg class="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <div>
+              <h5 class="font-semibold text-indigo-100">Direct Email Dispatch</h5>
+              <p class="text-xs text-indigo-200/90 mt-1">Your message is ready. Click below to dispatch directly to <strong class="text-white">rafe734422@gmail.com</strong> via your email app:</p>
+              <a href="mailto:rafe734422@gmail.com?subject=${encodeURIComponent(subjectVal)}&body=${encodeURIComponent('From: ' + nameVal + ' (' + emailVal + ')\n\n' + messageVal)}" class="mt-3 inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white transition-colors shadow-md">
+                <span>Open Gmail / Mail Client</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </a>
+            </div>
+          </div>
+        `;
+        formStatus.classList.remove('hidden');
+      }
+    })
+    .catch(() => {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalBtnHTML;
       formStatus.innerHTML = `
-        <div class="p-4 rounded-xl bg-indigo-500/15 border border-indigo-500/40 text-indigo-200 flex items-start gap-3 shadow-lg shadow-indigo-500/10">
-          <svg class="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-          </svg>
+        <div class="p-4 rounded-xl bg-indigo-500/15 border border-indigo-500/40 text-indigo-200 flex items-start gap-3 shadow-lg">
           <div>
-            <h5 class="font-semibold text-indigo-100">Message Prepared!</h5>
-            <p class="text-xs text-indigo-200/90 mt-1">Thank you, <span class="font-semibold text-white">${escapeHtml(nameVal)}</span>. Client validation passed. Your inquiry is directed to <strong class="text-white">rafe734422@gmail.com</strong>.</p>
+            <h5 class="font-semibold text-indigo-100">Send via Direct Mail</h5>
+            <p class="text-xs text-indigo-200/90 mt-1">Click below to send your message directly to <strong class="text-white">rafe734422@gmail.com</strong>:</p>
+            <a href="mailto:rafe734422@gmail.com?subject=${encodeURIComponent(subjectVal)}&body=${encodeURIComponent('From: ' + nameVal + ' (' + emailVal + ')\n\n' + messageVal)}" class="mt-3 inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white transition-colors shadow-md">
+              <span>Send via Gmail / Email App</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
           </div>
         </div>
       `;
       formStatus.classList.remove('hidden');
-
-      form.reset();
-      [nameInput, emailInput, subjectInput, messageInput].forEach(inp => {
-        inp.classList.remove('input-success');
-      });
-
-      showToast('Validation passed! Ready to dispatch to rafe734422@gmail.com');
-    }, 1000);
+    });
   });
 
   function setError(input, errorEl, message) {
